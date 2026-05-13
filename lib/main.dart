@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'pages/main_page.dart';
+import 'package:nyawit/pages/main_page.dart';
+
+import 'pages/auth/login_page.dart';
+import 'services/auth_service.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,7 +31,23 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const MainPage(),
+      home: FutureBuilder<bool>(
+        future: AuthService.isLoggedIn(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            );
+          }
+          if (snapshot.data == true) {
+            return const MainPage();
+          }
+          return const LoginPage();
+        },
+      ),
     );
   }
 }
+
+
+

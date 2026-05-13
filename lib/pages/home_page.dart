@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../services/auth_service.dart';
+import 'auth/login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,37 +14,47 @@ class HomePage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Card(
-            color: colorScheme.primaryContainer,
-            child: Padding(
-              padding: const EdgeInsets.all(24.0),
-              child: Column(
-                children: [
-                  Icon(
-                    Icons.eco,
-                    size: 80,
-                    color: colorScheme.onPrimaryContainer,
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    'Selamat Datang di Nyawit',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontWeight: FontWeight.bold,
+          FutureBuilder<Map<String, dynamic>?>(
+            future: AuthService.getMe(),
+            builder: (context, snapshot) {
+              final user = snapshot.data;
+              return Card(
+                color: colorScheme.primaryContainer,
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundColor: colorScheme.onPrimaryContainer.withOpacity(0.1),
+                        child: Icon(
+                          Icons.person,
+                          size: 50,
                           color: colorScheme.onPrimaryContainer,
                         ),
-                    textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        user != null ? 'Halo, ${user['name']}!' : 'Selamat Datang di Nyawit',
+                        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color: colorScheme.onPrimaryContainer,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        user != null ? user['email'] : 'Aplikasi deteksi tingkat kematangan tandan sawit berbasis AI.',
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              color: colorScheme.onPrimaryContainer,
+                            ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 8),
-                  Text(
-                    'Aplikasi deteksi tingkat kematangan tandan sawit berbasis AI.',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onPrimaryContainer,
-                        ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
+                ),
+              );
+            }
           ),
           const SizedBox(height: 24),
           Text(
@@ -72,6 +84,26 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          const SizedBox(height: 32),
+          OutlinedButton.icon(
+            onPressed: () async {
+              await AuthService.logout();
+              if (context.mounted) {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                  (route) => false,
+                );
+              }
+            },
+            icon: const Icon(Icons.logout),
+            label: const Text('Keluar dari Akun'),
+            style: OutlinedButton.styleFrom(
+              foregroundColor: colorScheme.error,
+              side: BorderSide(color: colorScheme.error),
+              padding: const EdgeInsets.symmetric(vertical: 12),
+            ),
           ),
         ],
       ),

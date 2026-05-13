@@ -39,6 +39,9 @@ dependencies:
   image: any
   tflite_flutter: any
   path_provider: any
+  http: any
+  shared_preferences: any
+  intl: any
 
 dev_dependencies:
   flutter_test:

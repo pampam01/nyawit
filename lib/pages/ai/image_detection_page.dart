@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../services/palm_detector.dart';
 import '../../models/detection.dart';
 import '../../utils/box_painter.dart';
+import '../../services/detection_service.dart';
 
 class ImageDetectionPage extends StatefulWidget {
   const ImageDetectionPage({super.key});
@@ -14,6 +15,7 @@ class ImageDetectionPage extends StatefulWidget {
 
 class _ImageDetectionPageState extends State<ImageDetectionPage> {
   bool _isProcessing = false;
+  bool _isSaving = false;
   File? _image;
   final ImagePicker _picker = ImagePicker();
   final PalmDetector _detector = PalmDetector();
@@ -72,6 +74,37 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
           _isProcessing = false;
         });
       }
+    }
+  }
+
+  void _saveResults() async {
+    if (_detections.isEmpty) return;
+    
+    setState(() => _isSaving = true);
+    
+    String? dominant;
+    int maxCount = -1;
+    _summary.forEach((key, value) {
+      if (value > maxCount) {
+        maxCount = value;
+        dominant = key;
+      }
+    });
+
+    final success = await DetectionService.saveDetection(
+      total: _detections.length,
+      dominantLabel: dominant,
+      counts: _summary,
+      detections: _detections,
+      imagePath: _image?.path,
+    );
+    
+    setState(() => _isSaving = false);
+
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(success ? 'Riwayat disimpan' : 'Gagal menyimpan riwayat')),
+      );
     }
   }
 
@@ -164,6 +197,22 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
                 ),
               ),
             ),
+            if (_detections.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: ElevatedButton.icon(
+                  onPressed: _isSaving ? null : _saveResults,
+                  icon: _isSaving 
+                    ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
+                    : const Icon(Icons.save),
+                  label: const Text('Simpan Riwayat'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: colorScheme.secondaryContainer,
+                    foregroundColor: colorScheme.onSecondaryContainer,
+                    minimumSize: const Size(double.infinity, 48),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
