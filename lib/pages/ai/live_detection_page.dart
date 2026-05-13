@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
+import '../../services/palm_detector.dart';
+import '../../models/detection.dart';
+import '../../utils/box_painter.dart';
 
 class LiveDetectionPage extends StatefulWidget {
   const LiveDetectionPage({super.key});
@@ -12,10 +16,23 @@ class _LiveDetectionPageState extends State<LiveDetectionPage> {
   bool _isInitializingCamera = false;
   bool _isDetecting = false;
 
+  CameraController? _cameraController;
+  List<CameraDescription>? _cameras;
+  
+  final PalmDetector _detector = PalmDetector();
+  List<Detection> _detections = [];
+  Map<String, int> _summary = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _detector.load();
+  }
+
   @override
   void dispose() {
-    // PENTING: Matikan live saat keluar
-    _stopLive();
+    _stopLive(isDisposing: true);
+    _detector.close();
     super.dispose();
   }
 
@@ -32,27 +49,75 @@ class _LiveDetectionPageState extends State<LiveDetectionPage> {
       _isInitializingCamera = true;
     });
 
-    // Simulasi inisialisasi kamera
-    await Future.delayed(const Duration(seconds: 1));
-
-    if (!mounted) return;
-
-    setState(() {
-      _isInitializingCamera = false;
-      _liveEnabled = true;
-      _isDetecting = true;
-    });
+    try {
+      _cameras ??= await availableCameras();
+      if (_cameras!.isEmpty) {
+        throw Exception('Tidak ada kamera yang tersedia.');
+      }
+      
+      _cameraController = CameraController(
+        _cameras![0],
+        ResolutionPreset.medium,
+        enableAudio: false,
+      );
+      
+      await _cameraController!.initialize();
+      
+      if (!mounted) return;
+      
+      setState(() {
+        _isInitializingCamera = false;
+        _liveEnabled = true;
+        _isDetecting = false; // Siap menerima frame
+      });
+      
+      _cameraController!.startImageStream((CameraImage image) async {
+        if (_isDetecting) return;
+        _isDetecting = true;
+        
+        try {
+          final detections = await _detector.detectFromCameraImage(image);
+          if (mounted && _liveEnabled) {
+            setState(() {
+              _detections = detections;
+              _summary = _detector.summarize(detections);
+            });
+          }
+        } catch (e) {
+          // Abaikan error per frame
+        } finally {
+          _isDetecting = false;
+        }
+      });
+      
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _isInitializingCamera = false;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Gagal memulai kamera: $e')),
+      );
+    }
   }
 
-  void _stopLive() {
-    if (!mounted) return;
+  void _stopLive({bool isDisposing = false}) {
+    _liveEnabled = false;
+    _isDetecting = false;
+    _detections = [];
+    _summary = {};
     
-    setState(() {
-      _liveEnabled = false;
-      _isDetecting = false;
-    });
-    
-    // Nanti stopImageStream dan dispose CameraController di sini
+    if (_cameraController != null) {
+      if (_cameraController!.value.isStreamingImages) {
+        _cameraController!.stopImageStream();
+      }
+      _cameraController!.dispose();
+      _cameraController = null;
+    }
+
+    if (!isDisposing && mounted) {
+      setState(() {});
+    }
   }
 
   @override
@@ -78,14 +143,27 @@ class _LiveDetectionPageState extends State<LiveDetectionPage> {
                 child: Center(
                   child: _isInitializingCamera
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : Text(
-                          _liveEnabled ? 'Live ON (Placeholder)' : 'Live OFF',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                      : (_liveEnabled && _cameraController != null && _cameraController!.value.isInitialized)
+                          ? ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  CameraPreview(_cameraController!),
+                                  CustomPaint(
+                                    painter: DetectionBoxPainter(_detections),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : const Text(
+                              'Live OFF',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                 ),
               ),
             ),
@@ -112,15 +190,15 @@ class _LiveDetectionPageState extends State<LiveDetectionPage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  children: const [
-                    _ResultRow(label: 'Total Tandan', value: '-'),
-                    Divider(),
-                    _ResultRow(label: 'Janjang kosong', value: '-'),
-                    _ResultRow(label: 'Kurang masak', value: '-'),
-                    _ResultRow(label: 'TBS abnormal', value: '-'),
-                    _ResultRow(label: 'TBS masak', value: '-'),
-                    _ResultRow(label: 'TBS mentah', value: '-'),
-                    _ResultRow(label: 'Terlalu masak', value: '-'),
+                  children: [
+                    _ResultRow(label: 'Total Tandan', value: _detections.length.toString()),
+                    const Divider(),
+                    _ResultRow(label: 'Janjang kosong', value: (_summary['Janjang kosong'] ?? 0).toString()),
+                    _ResultRow(label: 'Kurang masak', value: (_summary['Kurang masak'] ?? 0).toString()),
+                    _ResultRow(label: 'TBS abnormal', value: (_summary['TBS abnormal'] ?? 0).toString()),
+                    _ResultRow(label: 'TBS masak', value: (_summary['TBS masak'] ?? 0).toString()),
+                    _ResultRow(label: 'TBS mentah', value: (_summary['TBS mentah'] ?? 0).toString()),
+                    _ResultRow(label: 'Terlalu masak', value: (_summary['Terlalu masak'] ?? 0).toString()),
                   ],
                 ),
               ),

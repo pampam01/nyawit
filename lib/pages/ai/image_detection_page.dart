@@ -1,4 +1,9 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import '../../services/palm_detector.dart';
+import '../../models/detection.dart';
+import '../../utils/box_painter.dart';
 
 class ImageDetectionPage extends StatefulWidget {
   const ImageDetectionPage({super.key});
@@ -9,32 +14,65 @@ class ImageDetectionPage extends StatefulWidget {
 
 class _ImageDetectionPageState extends State<ImageDetectionPage> {
   bool _isProcessing = false;
+  File? _image;
+  final ImagePicker _picker = ImagePicker();
+  final PalmDetector _detector = PalmDetector();
+  List<Detection> _detections = [];
+  Map<String, int> _summary = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _detector.load();
+  }
 
   @override
   void dispose() {
-    // Nanti dispose controller TFLite / hal lain di sini agar tidak membebani memori
+    _detector.close();
     super.dispose();
   }
 
-  void _processImage(String source) async {
+  void _processImage(ImageSource source) async {
     if (_isProcessing) return;
 
     setState(() {
       _isProcessing = true;
     });
 
-    // Simulasi proses async
-    await Future.delayed(const Duration(seconds: 2));
+    try {
+      final XFile? pickedFile = await _picker.pickImage(source: source);
+      if (pickedFile != null) {
+        setState(() {
+          _image = File(pickedFile.path);
+          _detections = [];
+          _summary = {};
+        });
+        
+        final detections = await _detector.detectFromImagePath(pickedFile.path);
+        
+        if (!mounted) return;
+        setState(() {
+          _detections = detections;
+          _summary = _detector.summarize(detections);
+        });
 
-    if (!mounted) return;
-
-    setState(() {
-      _isProcessing = false;
-    });
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Mengambil gambar dari $source (Placeholder)')),
-    );
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Selesai diproses. Ditemukan ${_detections.length} objek.')),
+        );
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Gagal memproses gambar: $e')),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isProcessing = false;
+        });
+      }
+    }
   }
 
   @override
@@ -60,11 +98,24 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
                 child: Center(
                   child: _isProcessing
                       ? const CircularProgressIndicator()
-                      : Icon(
-                          Icons.image,
-                          size: 100,
-                          color: colorScheme.onSurfaceVariant,
-                        ),
+                      : _image != null
+                          ? ClipRRect(
+                              borderRadius: BorderRadius.circular(16),
+                              child: Stack(
+                                fit: StackFit.expand,
+                                children: [
+                                  Image.file(_image!, fit: BoxFit.cover),
+                                  CustomPaint(
+                                    painter: DetectionBoxPainter(_detections),
+                                  ),
+                                ],
+                              ),
+                            )
+                          : Icon(
+                              Icons.image,
+                              size: 100,
+                              color: colorScheme.onSurfaceVariant,
+                            ),
                 ),
               ),
             ),
@@ -73,7 +124,7 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
               children: [
                 Expanded(
                   child: ElevatedButton.icon(
-                    onPressed: _isProcessing ? null : () => _processImage('Kamera'),
+                    onPressed: _isProcessing ? null : () => _processImage(ImageSource.camera),
                     icon: const Icon(Icons.camera_alt),
                     label: const Text('Ambil Foto'),
                   ),
@@ -81,7 +132,7 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
                 const SizedBox(width: 16),
                 Expanded(
                   child: OutlinedButton.icon(
-                    onPressed: _isProcessing ? null : () => _processImage('Galeri'),
+                    onPressed: _isProcessing ? null : () => _processImage(ImageSource.gallery),
                     icon: const Icon(Icons.photo_library),
                     label: const Text('Galeri'),
                   ),
@@ -100,15 +151,15 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  children: const [
-                    _ResultRow(label: 'Total Tandan', value: '-'),
-                    Divider(),
-                    _ResultRow(label: 'Janjang kosong', value: '-'),
-                    _ResultRow(label: 'Kurang masak', value: '-'),
-                    _ResultRow(label: 'TBS abnormal', value: '-'),
-                    _ResultRow(label: 'TBS masak', value: '-'),
-                    _ResultRow(label: 'TBS mentah', value: '-'),
-                    _ResultRow(label: 'Terlalu masak', value: '-'),
+                  children: [
+                    _ResultRow(label: 'Total Tandan', value: _detections.length.toString()),
+                    const Divider(),
+                    _ResultRow(label: 'Janjang kosong', value: (_summary['Janjang kosong'] ?? 0).toString()),
+                    _ResultRow(label: 'Kurang masak', value: (_summary['Kurang masak'] ?? 0).toString()),
+                    _ResultRow(label: 'TBS abnormal', value: (_summary['TBS abnormal'] ?? 0).toString()),
+                    _ResultRow(label: 'TBS masak', value: (_summary['TBS masak'] ?? 0).toString()),
+                    _ResultRow(label: 'TBS mentah', value: (_summary['TBS mentah'] ?? 0).toString()),
+                    _ResultRow(label: 'Terlalu masak', value: (_summary['Terlalu masak'] ?? 0).toString()),
                   ],
                 ),
               ),

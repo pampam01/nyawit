@@ -14,6 +14,22 @@ subprojects {
 }
 subprojects {
     project.evaluationDependsOn(":app")
+    configurations.all {
+        resolutionStrategy {
+            force("androidx.concurrent:concurrent-futures:1.1.0")
+            force("com.google.guava:guava:31.1-android")
+        }
+    }
+    pluginManager.withPlugin("com.android.library") {
+        dependencies {
+            add("implementation", "androidx.concurrent:concurrent-futures:1.1.0")
+        }
+    }
+    pluginManager.withPlugin("com.android.application") {
+        dependencies {
+            add("implementation", "androidx.concurrent:concurrent-futures:1.1.0")
+        }
+    }
 }
 
 tasks.register<Delete>("clean") {
