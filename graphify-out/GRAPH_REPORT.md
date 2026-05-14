@@ -1,12 +1,18 @@
-# Graph Report - D:/usaha/nyawit  (2026-05-14)
+# Graph Report - nyawit  (2026-05-14)
 
 ## Corpus Check
-- Corpus is ~20,635 words - fits in a single context window. You may not need a graph.
+- 61 files · ~21,099 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 278 nodes · 301 edges · 37 communities (26 shown, 11 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.84)
+- 292 nodes · 314 edges · 40 communities (27 shown, 13 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `75473cb7`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Auth & Login UI|Auth & Login UI]]
@@ -35,14 +41,17 @@
 - [[_COMMUNITY_Android Main Activity|Android Main Activity]]
 - [[_COMMUNITY_Linux Build Target|Linux Build Target]]
 - [[_COMMUNITY_Windows Build Target|Windows Build Target]]
+- [[_COMMUNITY_Community 37|Community 37]]
+- [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `package:flutter/material.dart` - 11 edges
 2. `Nyawit Flutter App` - 7 edges
 3. `AppDelegate` - 6 edges
-4. `Create()` - 6 edges
-5. `Destroy()` - 6 edges
-6. `../models/detection.dart` - 5 edges
+4. `../models/detection.dart` - 6 edges
+5. `Create()` - 6 edges
+6. `Destroy()` - 6 edges
 7. `MessageHandler()` - 5 edges
 8. `RunnerTests` - 4 edges
 9. `../../services/auth_service.dart` - 4 edges
@@ -65,15 +74,15 @@
 - **Database Schema (User + Detection)** — migration_sql_user_table, migration_sql_detection_table, migration_sql_user_detection_fk [EXTRACTED 1.00]
 - **Nyawit App Branding Assets** — android_ic_launcher, ios_app_icon, ios_launch_image, macos_app_icon, web_favicon, web_icons [INFERRED 0.95]
 
-## Communities (37 total, 11 thin omitted)
+## Communities (40 total, 13 thin omitted)
 
 ### Community 0 - "Auth & Login UI"
-Cohesion: 0.07
-Nodes (28): auth/login_page.dart, build, _login, LoginPage, _LoginPageState, Scaffold, SizedBox, SnackBar (+20 more)
+Cohesion: 0.06
+Nodes (30): auth/login_page.dart, build, _login, LoginPage, _LoginPageState, Scaffold, SizedBox, SnackBar (+22 more)
 
 ### Community 1 - "Image Detection UI"
-Cohesion: 0.07
-Nodes (29): build, dispose, Divider, ImageDetectionPage, _ImageDetectionPageState, initState, Padding, _processImage (+21 more)
+Cohesion: 0.12
+Nodes (16): build, dispose, Divider, Exception, initState, LiveDetectionPage, _LiveDetectionPageState, Padding (+8 more)
 
 ### Community 2 - "Backend API Services"
 Cohesion: 0.13
@@ -100,8 +109,8 @@ Cohesion: 0.15
 Nodes (4): fl_register_plugins(), main(), my_application_activate(), my_application_new()
 
 ### Community 8 - "Detection History UI"
-Cohesion: 0.18
-Nodes (10): build, Card, HistoryPage, _HistoryPageState, initState, Padding, _showDeleteDialog, SizedBox (+2 more)
+Cohesion: 0.15
+Nodes (12): build, Card, HistoryPage, _HistoryPageState, initState, Padding, _showDeleteDialog, SizedBox (+4 more)
 
 ### Community 9 - "Navigation & Main Pages"
 Cohesion: 0.18
@@ -112,8 +121,8 @@ Cohesion: 0.2
 Nodes (9): build, LoginPage, main, MainPage, MaterialApp, MyApp, Scaffold, package:nyawit/pages/main_page.dart (+1 more)
 
 ### Community 11 - "AI Feature Pages"
-Cohesion: 0.29
-Nodes (6): AiPage, build, ListView, SizedBox, image_detection_page.dart, live_detection_page.dart
+Cohesion: 0.22
+Nodes (8): AiPage, build, _buildModeCard, Card, ListView, SizedBox, image_detection_page.dart, live_detection_page.dart
 
 ### Community 13 - "macOS Plugin Registration"
 Cohesion: 0.33
@@ -127,24 +136,28 @@ Nodes (6): Android App Icon, iOS App Icon, iOS Launch Image, macOS App Icon, Web
 Cohesion: 0.47
 Nodes (4): wWinMain(), CreateAndAttachConsole(), GetCommandLineArguments(), Utf8FromUtf16()
 
+### Community 37 - "Community 37"
+Cohesion: 0.12
+Nodes (15): build, _buildDetailedResults, Column, dispose, Divider, ImageDetectionPage, _ImageDetectionPageState, initState (+7 more)
+
 ## Knowledge Gaps
-- **131 isolated node(s):** `MainActivity`, `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry`, `MyApp`, `main` (+126 more)
+- **142 isolated node(s):** `MainActivity`, `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry`, `MyApp`, `main` (+137 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `package:flutter/material.dart` connect `Auth & Login UI` to `Image Detection UI`, `API Client & Auth Services`, `Detection History UI`, `Navigation & Main Pages`, `App Entry Point`, `AI Feature Pages`?**
-  _High betweenness centrality (0.165) - this node is a cross-community bridge._
-- **Why does `../models/detection.dart` connect `API Client & Auth Services` to `Image Detection UI`, `Palm Detector ML Engine`?**
-  _High betweenness centrality (0.067) - this node is a cross-community bridge._
+- **Why does `package:flutter/material.dart` connect `Auth & Login UI` to `Image Detection UI`, `API Client & Auth Services`, `Community 37`, `Detection History UI`, `Navigation & Main Pages`, `App Entry Point`, `AI Feature Pages`?**
+  _High betweenness centrality (0.160) - this node is a cross-community bridge._
+- **Why does `../models/detection.dart` connect `API Client & Auth Services` to `Detection History UI`, `Image Detection UI`, `Palm Detector ML Engine`, `Community 37`?**
+  _High betweenness centrality (0.073) - this node is a cross-community bridge._
 - **What connects `MainActivity`, `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry` to the rest of the system?**
-  _131 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _142 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Auth & Login UI` be split into smaller, more focused modules?**
-  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Image Detection UI` be split into smaller, more focused modules?**
-  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
 - **Should `Backend API Services` be split into smaller, more focused modules?**
   _Cohesion score 0.13 - nodes in this community are weakly interconnected._
 - **Should `Windows Native Runner` be split into smaller, more focused modules?**

@@ -48,40 +48,40 @@
     "hash": "24e5d095048eb86c30423f4e04b6e57b"
   },
   "D:\\usaha\\nyawit\\lib\\main.dart": {
-    "mtime": 1778688241.1565554,
-    "hash": "7e9e71c29c0ac79218a276ccd20b8fe0"
+    "mtime": 1778754148.9264405,
+    "hash": "c964921b0edc0c4f37d6dbe0bc65c2ec"
   },
   "D:\\usaha\\nyawit\\lib\\models\\detection.dart": {
-    "mtime": 1778682320.6517737,
-    "hash": "da4d03dcb602ee98036f889141e5700a"
+    "mtime": 1778753361.6977491,
+    "hash": "7163834d396514ae7090a17d30d8b6fd"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\history_page.dart": {
-    "mtime": 1778688052.8842194,
-    "hash": "79b09ce8d67d319f7f5c250124774fb9"
+    "mtime": 1778753715.2768795,
+    "hash": "a2e8da67c8386abf437d92ccddb0a122"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\home_page.dart": {
-    "mtime": 1778688110.470996,
-    "hash": "c7a46e90a635d47ae5146776eaaf1485"
+    "mtime": 1778753704.0741363,
+    "hash": "5fc160a3c92ff38993293b229e66ff12"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\main_page.dart": {
-    "mtime": 1778682269.589153,
-    "hash": "322457f2183cb8577eb24fe7c0a8b167"
+    "mtime": 1778753685.5951877,
+    "hash": "8ea4bb2fb046c494675555fd17bb5669"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\ai_page.dart": {
-    "mtime": 1778682304.084948,
-    "hash": "2524dd335ed0d18265ed9c02e5dd8a72"
+    "mtime": 1778753772.4895413,
+    "hash": "f2076b10aece9fde998eedeecc07a81d"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\image_detection_page.dart": {
-    "mtime": 1778688094.8349297,
-    "hash": "0640377148c883018bd66ba0ad1229f3"
+    "mtime": 1778753897.6872952,
+    "hash": "d11e2d0979b8eaa7e8d1d8349160664d"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\live_detection_page.dart": {
     "mtime": 1778685303.3606155,
     "hash": "fa6e037cf51aaf4762deaf57684ad84b"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\auth\\login_page.dart": {
-    "mtime": 1778688171.5559003,
-    "hash": "594f597af8de766c3f2b439752f6dc7f"
+    "mtime": 1778753754.5330925,
+    "hash": "877d2d286b13fe2ee266cc9a68eb7189"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\auth\\register_page.dart": {
     "mtime": 1778688028.211605,
@@ -96,8 +96,8 @@
     "hash": "5d33e4f42ff66f06d92d0e5946e9f4be"
   },
   "D:\\usaha\\nyawit\\lib\\services\\detection_service.dart": {
-    "mtime": 1778687947.7649674,
-    "hash": "c167475911d31723292234b8e5df4b7a"
+    "mtime": 1778753370.403826,
+    "hash": "2b3a4ff514a7ab23bde493e469430f00"
   },
   "D:\\usaha\\nyawit\\lib\\services\\palm_detector.dart": {
     "mtime": 1778685658.951636,
