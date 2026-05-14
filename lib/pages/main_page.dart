@@ -35,6 +35,7 @@ class _MainPageState extends State<MainPage> {
       body: _pages[_currentIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         onDestinationSelected: (index) {
           setState(() {
             _currentIndex = index;
@@ -42,15 +43,18 @@ class _MainPageState extends State<MainPage> {
         },
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.home_outlined),
+            selectedIcon: Icon(Icons.home),
             label: 'Beranda',
           ),
           NavigationDestination(
-            icon: Icon(Icons.psychology),
+            icon: Icon(Icons.psychology_outlined),
+            selectedIcon: Icon(Icons.psychology),
             label: 'AI',
           ),
           NavigationDestination(
-            icon: Icon(Icons.history),
+            icon: Icon(Icons.history_outlined),
+            selectedIcon: Icon(Icons.history),
             label: 'Riwayat',
           ),
         ],

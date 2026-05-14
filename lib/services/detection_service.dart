@@ -15,11 +15,7 @@ class DetectionService {
         'total': total,
         'dominantLabel': dominantLabel,
         'counts': counts,
-        'detections': detections.map((e) => {
-          'className': e.className,
-          'score': e.score,
-          'bbox': [e.x1, e.y1, e.x2, e.y2],
-        }).toList(),
+        'detections': detections.map((e) => e.toMap()).toList(),
         'imagePath': imagePath,
       });
 
@@ -29,11 +25,12 @@ class DetectionService {
     }
   }
 
-  static Future<List<dynamic>> getHistory() async {
+  static Future<List<DetectionRecord>> getHistory() async {
     try {
       final response = await ApiClient.get('/detections');
       if (response.statusCode == 200) {
-        return jsonDecode(response.body)['detections'];
+        final List data = jsonDecode(response.body)['detections'];
+        return data.map((e) => DetectionRecord.fromMap(e)).toList();
       }
       return [];
     } catch (e) {

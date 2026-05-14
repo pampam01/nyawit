@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/detection_service.dart';
+import '../models/detection.dart';
 import 'package:intl/intl.dart';
 
 class HistoryPage extends StatefulWidget {
@@ -10,7 +11,7 @@ class HistoryPage extends StatefulWidget {
 }
 
 class _HistoryPageState extends State<HistoryPage> {
-  List<dynamic> _history = [];
+  List<DetectionRecord> _history = [];
   bool _isLoading = true;
 
   @override
@@ -40,54 +41,93 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.fromLTRB(20, 24, 20, 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Riwayat Deteksi',
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
               ),
-              IconButton(
+              const Spacer(),
+              IconButton.filledTonal(
                 onPressed: _fetchHistory,
-                icon: const Icon(Icons.refresh),
+                icon: const Icon(Icons.refresh, size: 20),
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 24),
           Expanded(
             child: _isLoading
                 ? const Center(child: CircularProgressIndicator())
                 : _history.isEmpty
-                    ? const Card(
-                        child: Center(
-                          child: Text('Belum ada riwayat'),
+                    ? Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.history_rounded, size: 64, color: Colors.grey.withOpacity(0.3)),
+                            const SizedBox(height: 16),
+                            const Text('Belum ada riwayat', style: TextStyle(color: Colors.grey)),
+                          ],
                         ),
                       )
                     : ListView.builder(
                         itemCount: _history.length,
+                        padding: const EdgeInsets.only(bottom: 24),
                         itemBuilder: (context, index) {
                           final item = _history[index];
-                          final date = DateTime.parse(item['createdAt']).toLocal();
-                          final formattedDate = DateFormat('dd MMM yyyy, HH:mm').format(date);
+                          final formattedDate = DateFormat('dd MMM yyyy, HH:mm').format(item.createdAt.toLocal());
 
                           return Card(
-                            margin: const EdgeInsets.only(bottom: 12),
-                            child: ListTile(
-                              leading: CircleAvatar(
-                                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                                child: Text(item['total'].toString()),
-                              ),
-                              title: Text(item['dominantLabel'] ?? 'Tanpa Label'),
-                              subtitle: Text(formattedDate),
-                              trailing: IconButton(
-                                icon: const Icon(Icons.delete_outline, color: Colors.red),
-                                onPressed: () => _showDeleteDialog(item['id']),
+                            margin: const EdgeInsets.only(bottom: 16),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    width: 56,
+                                    height: 56,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        item.total.toString(),
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          color: Theme.of(context).colorScheme.primary,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 16),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          item.dominantLabel ?? 'Tanpa Label',
+                                          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                        ),
+                                        const SizedBox(height: 4),
+                                        Text(
+                                          formattedDate,
+                                          style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  IconButton(
+                                    icon: Icon(Icons.delete_outline_rounded, color: Colors.red.withOpacity(0.7)),
+                                    onPressed: () => _showDeleteDialog(item.id),
+                                  ),
+                                ],
                               ),
                             ),
                           );
