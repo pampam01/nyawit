@@ -17,7 +17,7 @@ export const createDetection = async (req: Request, res: Response) => {
         total: data.total,
         dominantLabel: data.dominantLabel,
         counts: data.counts,
-        detections: data.detections ?? null,
+        detections: data.detections ?? undefined,
         imagePath: data.imagePath ?? null,
       },
     });
