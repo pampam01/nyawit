@@ -60,7 +60,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
 <div class="container">
 
 <h1>nyawit — Complete Call Flow &amp; Architecture Documentation</h1>
-<p class="subtitle">Generated from graphify knowledge graph: 325 nodes, 359 edges, 40 communities. Commit: 9eead1c</p>
+<p class="subtitle">Generated from graphify knowledge graph: 359 nodes, 401 edges, 41 communities. Commit: 8984e5d</p>
 
 <div class="nav">
     <a href="#overview">Architecture Overview</a>
@@ -71,9 +71,9 @@ hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     <a href="#tests-fixtures">Tests &amp; Fixtures</a>
     <a href="#windows-native-runner">Windows Native Runner</a>
     <a href="#community-37">Community 37</a>
+    <a href="#windows-flutter-window">Windows Flutter Window</a>
     <a href="#detection-history-ui">Detection History UI</a>
     <a href="#palm-detector-ml-engine">Palm Detector ML Engine</a>
-    <a href="#windows-flutter-window">Windows Flutter Window</a>
     <a href="#ios-app-delegate">iOS App Delegate</a>
     <a href="#macos-plugin-registration">macOS Plugin Registration</a>
     <a href="#app-branding-assets">App Branding Assets</a>
@@ -94,7 +94,7 @@ flowchart LR
     class BUILD_GRAPH_321CBB04 module;
     CLI_SKILLS_9964CBB8("CLI &amp; Skill Installers<br/><small>44 nodes</small>")
     class CLI_SKILLS_9964CBB8 module;
-    SERVE_API_35EC8E86("Serving API<br/><small>61 nodes</small>")
+    SERVE_API_35EC8E86("Serving API<br/><small>82 nodes</small>")
     class SERVE_API_35EC8E86 module;
     TESTS_FIXTURES_B84B1DCC("Tests &amp; Fixtures<br/><small>19 nodes</small>")
     class TESTS_FIXTURES_B84B1DCC module;
@@ -102,12 +102,12 @@ flowchart LR
     class WINDOWS_NATIVE_RUNNER_523FB8B8 module;
     COMMUNITY_37_489F9468("Community 37<br/><small>24 nodes</small>")
     class COMMUNITY_37_489F9468 module;
+    WINDOWS_FLUTTER_WINDOW_C10E32A7("Windows Flutter Window<br/><small>23 nodes</small>")
+    class WINDOWS_FLUTTER_WINDOW_C10E32A7 module;
     DETECTION_HISTORY_UI_9F506790("Detection History UI<br/><small>16 nodes</small>")
     class DETECTION_HISTORY_UI_9F506790 module;
     PALM_DETECTOR_ML_ENGINE_6A74D34E("Palm Detector ML Engine<br/><small>15 nodes</small>")
     class PALM_DETECTOR_ML_ENGINE_6A74D34E module;
-    WINDOWS_FLUTTER_WINDOW_C10E32A7("Windows Flutter Window<br/><small>10 nodes</small>")
-    class WINDOWS_FLUTTER_WINDOW_C10E32A7 module;
     IOS_APP_DELEGATE_24F3D273("iOS App Delegate<br/><small>7 nodes</small>")
     class IOS_APP_DELEGATE_24F3D273 module;
     MACOS_PLUGIN_REGISTRATION_FED40AB7("macOS Plugin Registration<br/><small>6 nodes</small>")
@@ -119,7 +119,7 @@ flowchart LR
     OTHER_D0941E68("Other<br/><small>24 nodes</small>")
     class OTHER_D0941E68 module;
     TESTS_FIXTURES_B84B1DCC -->|imports x4| BUILD_GRAPH_321CBB04
-    SERVE_API_35EC8E86 -->|imports x2| BUILD_GRAPH_321CBB04
+    SERVE_API_35EC8E86 -->|imports x3| BUILD_GRAPH_321CBB04
     BUILD_GRAPH_321CBB04 -->|imports x2| PALM_DETECTOR_ML_ENGINE_6A74D34E
     CLI_SKILLS_9964CBB8 -->|imports| TESTS_FIXTURES_B84B1DCC
     CLI_SKILLS_9964CBB8 -->|imports| BUILD_GRAPH_321CBB04
@@ -146,24 +146,24 @@ flowchart LR
     <h4>Architecture Layers</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>Layer</th><th>Nodes</th><th>Communities</th></tr>
-      <tr><td>Extraction Pipeline</td><td>3</td><td><code>19</code></td></tr><tr><td>Graph Build</td><td>56</td><td><code>1, 0, 24, 26, 35, 36</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>44</td><td><code>7, 9, 10, 15, 23</code></td></tr><tr><td>Serving API</td><td>61</td><td><code>2, 4, 6, 22</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>19</td><td><code>11</code></td></tr><tr><td>Windows Native Runner</td><td>29</td><td><code>3</code></td></tr><tr><td>Community 37</td><td>24</td><td><code>37</code></td></tr><tr><td>Detection History UI</td><td>16</td><td><code>8</code></td></tr><tr><td>Palm Detector ML Engine</td><td>15</td><td><code>5</code></td></tr><tr><td>Windows Flutter Window</td><td>10</td><td><code>17</code></td></tr><tr><td>iOS App Delegate</td><td>7</td><td><code>12</code></td></tr><tr><td>macOS Plugin Registration</td><td>6</td><td><code>13</code></td></tr><tr><td>App Branding Assets</td><td>6</td><td><code>14</code></td></tr><tr><td>iOS Runner Tests</td><td>5</td><td><code>16</code></td></tr><tr><td>Other</td><td>24</td><td><code>18, 20, 21, 38, 39, 25, 27, 28, 29, 30, 31, 32, 33, 34</code></td></tr>
+      <tr><td>Extraction Pipeline</td><td>3</td><td><code>19</code></td></tr><tr><td>Graph Build</td><td>56</td><td><code>1, 0, 24, 26, 35, 36</code></td></tr><tr><td>CLI &amp; Skill Installers</td><td>44</td><td><code>7, 9, 10, 15, 23</code></td></tr><tr><td>Serving API</td><td>82</td><td><code>2, 40, 6, 4, 22</code></td></tr><tr><td>Tests &amp; Fixtures</td><td>19</td><td><code>11</code></td></tr><tr><td>Windows Native Runner</td><td>29</td><td><code>3</code></td></tr><tr><td>Community 37</td><td>24</td><td><code>37</code></td></tr><tr><td>Windows Flutter Window</td><td>23</td><td><code>17</code></td></tr><tr><td>Detection History UI</td><td>16</td><td><code>8</code></td></tr><tr><td>Palm Detector ML Engine</td><td>15</td><td><code>5</code></td></tr><tr><td>iOS App Delegate</td><td>7</td><td><code>12</code></td></tr><tr><td>macOS Plugin Registration</td><td>6</td><td><code>13</code></td></tr><tr><td>App Branding Assets</td><td>6</td><td><code>14</code></td></tr><tr><td>iOS Runner Tests</td><td>5</td><td><code>16</code></td></tr><tr><td>Other</td><td>24</td><td><code>18, 20, 21, 38, 39, 25, 27, 28, 29, 30, 31, 32, 33, 34</code></td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Core Flow</h4>
-    <div class="arrow-chain">Extraction Pipeline -&gt; Graph Build -&gt; Palm Detector ML Engine -&gt; CLI &amp; Skill Installers -&gt; Tests &amp; Fixtures -&gt; Windows Flutter Window -&gt; Community 37</div>
+    <div class="arrow-chain">Extraction Pipeline -&gt; Graph Build -&gt; Palm Detector ML Engine -&gt; CLI &amp; Skill Installers -&gt; Tests &amp; Fixtures -&gt; Windows Flutter Window -&gt; Serving API</div>
   </div>
 </div>
 <div class="grid">
   <div class="card">
     <h4>Graph Report Highlights</h4>
     <ul>
-      <li>325 nodes · 359 edges · 40 communities (28 shown, 12 thin omitted)</li>
-      <li>Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.84)</li>
+      <li>359 nodes · 401 edges · 41 communities (29 shown, 12 thin omitted)</li>
+      <li>Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.84)</li>
       <li>Token cost: 0 input · 0 output</li>
       <li>1. `package:flutter/material.dart` - 12 edges</li>
-      <li>2. `Nyawit Flutter App` - 7 edges</li>
-      <li>3. `AppDelegate` - 6 edges</li>
+      <li>2. `dart:convert` - 7 edges</li>
+      <li>3. `Nyawit Flutter App` - 7 edges</li>
     </ul>
   </div>
 </div>
@@ -940,76 +940,68 @@ flowchart LR
 
 <!-- ====== 5. Serving API ====== -->
 <h2 id="serve-api">5. Serving API</h2>
-<p>Serving API groups implementation around api, nyawit, services, servicedart, mostly in pubspec.yaml, src/controllers/auth.controller.ts, src/controllers/detection.controller.ts. This section covers 61 nodes and 87 internal edges; the diagram shows only representative relationships to stay readable.</p>
+<p>Serving API groups implementation around api, nyawit, services, servicedart, mostly in RINGKASAN.md, pubspec.yaml, src/controllers/auth.controller.ts. This section covers 82 nodes and 113 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
 %%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
 flowchart LR
-    %% Section: Serving API (61 nodes, 87 edges)
+    %% Section: Serving API (82 nodes, 113 edges)
     subgraph serve_api_src_controllers_auth_controller_ts_a1a94c7a["src/controllers/auth.controller.ts"]
         nyawit_api_src_controllers_auth_controller_ts_3f1b8ead("auth.controller.ts")
         controllers_auth_controller_login_0a72da96("login()<br/><small>src/controllers/auth.controller.ts</small>")
         controllers_auth_controller_register_6b96bb53("register()<br/><small>src/controllers/auth.controller.ts</small>")
         controllers_auth_controller_updateprofile_2328cbdf("updateProfile()<br/><small>src/controllers/auth.controller.ts</small>")
     end
-    subgraph serve_api_lib_services_detection_service_dart_1aa8942e["lib/services/detection_service.dart"]
-        dart_convert_b7330642("dart:convert<br/><small>lib/services/detection_service.dart</small>")
-        lib_services_detection_service_dart_13b2a929("detection_service.dart")
-        api_client_dart_88412120("api_client.dart<br/><small>lib/services/detection_service.dart</small>")
-    end
-    subgraph serve_api_lib_services_api_client_dart_a87143a3["lib/services/api_client.dart"]
-        lib_services_api_client_dart_6bd47d02("api_client.dart")
-        package_http_http_dart_0b3805a1("package:http/http.dart<br/><small>lib/services/api_client.dart</small>")
-    end
-    subgraph serve_api_lib_services_auth_service_dart_da91dedb["lib/services/auth_service.dart"]
-        lib_services_auth_service_dart_6454be74("auth_service.dart")
-        package_shared_preferences_shared_preferences_da_d8269709("package:shared preferences/shared prefe...<br/><small>lib/services/auth_service.dart</small>")
-    end
     subgraph serve_api_src_controllers_detection_controller_t_37e2dad9["src/controllers/detection.controller.ts"]
         nyawit_api_src_controllers_detection_controller_c044491b("detection.controller.ts")
         controllers_detection_controller_createdetection_9debf55b("createDetection()<br/><small>src/controllers/detection.controller.ts</small>")
+    end
+    subgraph serve_api_src_controllers_price_controller_ts_31950a06["src/controllers/price.controller.ts"]
+        controllers_price_controller_getseedfordate_311f1d56("getSeedForDate()<br/><small>src/controllers/price.controller.ts</small>")
+        controllers_price_controller_gettodayprices_d13afd6c("getTodayPrices()<br/><small>src/controllers/price.controller.ts</small>")
     end
     subgraph serve_api_src_lib_jwt_ts_5bd5df25["src/lib/jwt.ts"]
         lib_jwt_signtoken_b32fdc9d("signToken()<br/><small>src/lib/jwt.ts</small>")
         lib_jwt_verifytoken_c5d0b19a("verifyToken()<br/><small>src/lib/jwt.ts</small>")
     end
+    lib_services_api_client_dart_6bd47d02("api_client.dart")
+    lib_services_auth_service_dart_6454be74("auth_service.dart")
+    lib_services_detection_service_dart_13b2a929("detection_service.dart")
+    dart_convert_b7330642("dart:convert<br/><small>lib/services/price_service.dart</small>")
     models_detection_dart_33e4e232("../models/detection.dart<br/><small>lib/utils/box_painter.dart</small>")
+    nyawit_api_src_index_ts_bdc7b738("index.ts")
     middleware_auth_middleware_authmiddleware_abf838f9("authMiddleware()<br/><small>src/middleware/auth.middleware.ts</small>")
     utils_file_savebase64image_4b7d7274("saveBase64Image()<br/><small>src/utils/file.ts</small>")
     controllers_auth_controller_register_6b96bb53 -->|calls| lib_jwt_signtoken_b32fdc9d
     controllers_auth_controller_login_0a72da96 -->|calls| lib_jwt_signtoken_b32fdc9d
     controllers_auth_controller_updateprofile_2328cbdf -->|calls| utils_file_savebase64image_4b7d7274
     controllers_detection_controller_createdetection_9debf55b -->|calls| utils_file_savebase64image_4b7d7274
+    controllers_price_controller_getseedfordate_311f1d56 -->|calls| controllers_price_controller_gettodayprices_d13afd6c
     lib_jwt_verifytoken_c5d0b19a -->|calls| middleware_auth_middleware_authmiddleware_abf838f9
     models_detection_dart_33e4e232 -->|imports| lib_services_detection_service_dart_13b2a929
     dart_convert_b7330642 -->|imports| lib_services_api_client_dart_6bd47d02
     dart_convert_b7330642 -->|imports| lib_services_auth_service_dart_6454be74
     dart_convert_b7330642 -->|imports| lib_services_detection_service_dart_13b2a929
-    lib_services_api_client_dart_6bd47d02 -->|imports| package_http_http_dart_0b3805a1
-    lib_services_api_client_dart_6bd47d02 -->|imports| package_shared_preferences_shared_preferences_da_d8269709
-    package_shared_preferences_shared_preferences_da_d8269709 -->|imports| lib_services_auth_service_dart_6454be74
-    lib_services_auth_service_dart_6454be74 -->|imports| api_client_dart_88412120
-    api_client_dart_88412120 -->|imports| lib_services_detection_service_dart_13b2a929
     nyawit_api_src_controllers_auth_controller_ts_3f1b8ead -->|imports| lib_jwt_signtoken_b32fdc9d
     nyawit_api_src_controllers_auth_controller_ts_3f1b8ead -->|imports| utils_file_savebase64image_4b7d7274
     nyawit_api_src_controllers_detection_controller_c044491b -->|imports| utils_file_savebase64image_4b7d7274
-    %% Omitted for readability: 43 nodes, 0 edges
+    %% Omitted for readability: 64 nodes, 0 edges
     class nyawit_api_src_controllers_auth_controller_ts_3f1b8ead module;
     class controllers_auth_controller_login_0a72da96 function;
     class controllers_auth_controller_register_6b96bb53 function;
     class controllers_auth_controller_updateprofile_2328cbdf function;
-    class dart_convert_b7330642 function;
-    class lib_services_detection_service_dart_13b2a929 function;
-    class api_client_dart_88412120 api;
-    class lib_services_api_client_dart_6bd47d02 api;
-    class package_http_http_dart_0b3805a1 function;
-    class lib_services_auth_service_dart_6454be74 function;
-    class package_shared_preferences_shared_preferences_da_d8269709 function;
     class nyawit_api_src_controllers_detection_controller_c044491b module;
     class controllers_detection_controller_createdetection_9debf55b function;
+    class controllers_price_controller_getseedfordate_311f1d56 function;
+    class controllers_price_controller_gettodayprices_d13afd6c function;
     class lib_jwt_signtoken_b32fdc9d function;
     class lib_jwt_verifytoken_c5d0b19a function;
+    class lib_services_api_client_dart_6bd47d02 api;
+    class lib_services_auth_service_dart_6454be74 function;
+    class lib_services_detection_service_dart_13b2a929 function;
+    class dart_convert_b7330642 function;
     class models_detection_dart_33e4e232 function;
+    class nyawit_api_src_index_ts_bdc7b738 module;
     class middleware_auth_middleware_authmiddleware_abf838f9 function;
     class utils_file_savebase64image_4b7d7274 function;
     classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
@@ -1038,7 +1030,7 @@ flowchart LR
   <td><code>index.ts</code><br><small style="color:var(--muted)">nyawit-api/src/index.ts</small></td>
   <td><span class="tag tag-class">Module</span></td>
   <td>External entry / no inbound edge</td>
-  <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small><br><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small></td>
+  <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small><br><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small><br><code>price.routes.ts</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small></td>
   <td>Module file in nyawit-api/src/index.ts.</td>
 </tr>
 <tr>
@@ -1131,6 +1123,30 @@ flowchart LR
 </tr>
 <tr>
   <td>13</td>
+  <td><code>price.controller.ts</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small></td>
+  <td><span class="tag tag-class">Module</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>price.routes.ts</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small><br><code>prisma.ts</code><br><small style="color:var(--muted)">src/lib/prisma.ts</small></td>
+  <td>Module file in src/controllers/price.controller.ts.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>getSeedForDate()</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>getTodayPrices()</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small></td>
+  <td>getSeedForDate() node in src/controllers/price.controller.ts.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>getTodayPrices()</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>getSeedForDate()</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small></td>
+  <td><code>price.routes.ts</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small></td>
+  <td>getTodayPrices() node in src/controllers/price.controller.ts.</td>
+</tr>
+<tr>
+  <td>16</td>
   <td><code>jwt.ts</code><br><small style="color:var(--muted)">src/lib/jwt.ts</small></td>
   <td><span class="tag tag-class">Module</span></td>
   <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small></td>
@@ -1138,7 +1154,7 @@ flowchart LR
   <td>Module file in src/lib/jwt.ts.</td>
 </tr>
 <tr>
-  <td>14</td>
+  <td>17</td>
   <td><code>signToken()</code><br><small style="color:var(--muted)">src/lib/jwt.ts</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>login()</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>register()</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small></td>
@@ -1146,7 +1162,7 @@ flowchart LR
   <td>signToken() node in src/lib/jwt.ts.</td>
 </tr>
 <tr>
-  <td>15</td>
+  <td>18</td>
   <td><code>verifyToken()</code><br><small style="color:var(--muted)">src/lib/jwt.ts</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td>External entry / no inbound edge</td>
@@ -1154,31 +1170,31 @@ flowchart LR
   <td>verifyToken() node in src/lib/jwt.ts.</td>
 </tr>
 <tr>
-  <td>16</td>
+  <td>19</td>
   <td><code>prisma.ts</code><br><small style="color:var(--muted)">src/lib/prisma.ts</small></td>
   <td><span class="tag tag-class">Module</span></td>
-  <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>detection.controller.ts</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small></td>
+  <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>detection.controller.ts</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small><br><code>price.controller.ts</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small></td>
   <td><code>auth.middleware.ts</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small></td>
   <td>Module file in src/lib/prisma.ts.</td>
 </tr>
 <tr>
-  <td>17</td>
+  <td>20</td>
   <td><code>auth.middleware.ts</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small></td>
   <td><span class="tag tag-class">Module</span></td>
   <td><code>jwt.ts</code><br><small style="color:var(--muted)">src/lib/jwt.ts</small><br><code>prisma.ts</code><br><small style="color:var(--muted)">src/lib/prisma.ts</small><br><code>verifyToken()</code><br><small style="color:var(--muted)">src/lib/jwt.ts</small></td>
-  <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small><br><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small></td>
+  <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small><br><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small><br><code>price.routes.ts</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small></td>
   <td>Module file in src/middleware/auth.middleware.ts.</td>
 </tr>
 <tr>
-  <td>18</td>
+  <td>21</td>
   <td><code>authMiddleware()</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>verifyToken()</code><br><small style="color:var(--muted)">src/lib/jwt.ts</small></td>
-  <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small><br><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small></td>
+  <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small><br><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small><br><code>price.routes.ts</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small></td>
   <td>authMiddleware() node in src/middleware/auth.middleware.ts.</td>
 </tr>
 <tr>
-  <td>19</td>
+  <td>22</td>
   <td><code>auth.routes.ts</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small></td>
   <td><span class="tag tag-endpoint">API</span></td>
   <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>auth.middleware.ts</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small><br><code>authMiddleware()</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small><br>+5 more</td>
@@ -1186,7 +1202,7 @@ flowchart LR
   <td>Module file in src/routes/auth.routes.ts.</td>
 </tr>
 <tr>
-  <td>20</td>
+  <td>23</td>
   <td><code>router</code><br><small style="color:var(--muted)">src/routes/auth.routes.ts</small></td>
   <td><span class="tag tag-endpoint">API</span></td>
   <td>External entry / no inbound edge</td>
@@ -1194,7 +1210,7 @@ flowchart LR
   <td>router node in src/routes/auth.routes.ts.</td>
 </tr>
 <tr>
-  <td>21</td>
+  <td>24</td>
   <td><code>detection.routes.ts</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small></td>
   <td><span class="tag tag-endpoint">API</span></td>
   <td><code>auth.middleware.ts</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small><br><code>authMiddleware()</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small><br><code>createDetection()</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small><br>+5 more</td>
@@ -1202,7 +1218,7 @@ flowchart LR
   <td>Module file in src/routes/detection.routes.ts.</td>
 </tr>
 <tr>
-  <td>22</td>
+  <td>25</td>
   <td><code>router</code><br><small style="color:var(--muted)">src/routes/detection.routes.ts</small></td>
   <td><span class="tag tag-endpoint">API</span></td>
   <td>External entry / no inbound edge</td>
@@ -1210,7 +1226,23 @@ flowchart LR
   <td>router node in src/routes/detection.routes.ts.</td>
 </tr>
 <tr>
-  <td>23</td>
+  <td>26</td>
+  <td><code>price.routes.ts</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small></td>
+  <td><span class="tag tag-endpoint">API</span></td>
+  <td><code>auth.middleware.ts</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small><br><code>authMiddleware()</code><br><small style="color:var(--muted)">src/middleware/auth.middleware.ts</small><br><code>getTodayPrices()</code><br><small style="color:var(--muted)">src/controllers/price.controller.ts</small><br>+2 more</td>
+  <td>No direct outbound edge</td>
+  <td>Module file in src/routes/price.routes.ts.</td>
+</tr>
+<tr>
+  <td>27</td>
+  <td><code>router</code><br><small style="color:var(--muted)">src/routes/price.routes.ts</small></td>
+  <td><span class="tag tag-endpoint">API</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>router node in src/routes/price.routes.ts.</td>
+</tr>
+<tr>
+  <td>28</td>
   <td><code>file.ts</code><br><small style="color:var(--muted)">src/utils/file.ts</small></td>
   <td><span class="tag tag-class">Module</span></td>
   <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>detection.controller.ts</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small></td>
@@ -1218,7 +1250,7 @@ flowchart LR
   <td>Module file in src/utils/file.ts.</td>
 </tr>
 <tr>
-  <td>24</td>
+  <td>29</td>
   <td><code>saveBase64Image()</code><br><small style="color:var(--muted)">src/utils/file.ts</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small><br><code>createDetection()</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small><br><code>detection.controller.ts</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small><br>+1 more</td>
@@ -1226,52 +1258,12 @@ flowchart LR
   <td>saveBase64Image() node in src/utils/file.ts.</td>
 </tr>
 <tr>
-  <td>25</td>
+  <td>30</td>
   <td><code>auth.validator.ts</code><br><small style="color:var(--muted)">src/validators/auth.validator.ts</small></td>
   <td><span class="tag tag-class">Module</span></td>
   <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small></td>
   <td>No direct outbound edge</td>
   <td>Module file in src/validators/auth.validator.ts.</td>
-</tr>
-<tr>
-  <td>26</td>
-  <td><code>registerSchema</code><br><small style="color:var(--muted)">src/validators/auth.validator.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>registerSchema node in src/validators/auth.validator.ts.</td>
-</tr>
-<tr>
-  <td>27</td>
-  <td><code>loginSchema</code><br><small style="color:var(--muted)">src/validators/auth.validator.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>loginSchema node in src/validators/auth.validator.ts.</td>
-</tr>
-<tr>
-  <td>28</td>
-  <td><code>updateProfileSchema</code><br><small style="color:var(--muted)">src/validators/auth.validator.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>auth.controller.ts</code><br><small style="color:var(--muted)">src/controllers/auth.controller.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>updateProfileSchema node in src/validators/auth.validator.ts.</td>
-</tr>
-<tr>
-  <td>29</td>
-  <td><code>detection.validator.ts</code><br><small style="color:var(--muted)">src/validators/detection.validator.ts</small></td>
-  <td><span class="tag tag-class">Module</span></td>
-  <td><code>detection.controller.ts</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>Module file in src/validators/detection.validator.ts.</td>
-</tr>
-<tr>
-  <td>30</td>
-  <td><code>createDetectionSchema</code><br><small style="color:var(--muted)">src/validators/detection.validator.ts</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>detection.controller.ts</code><br><small style="color:var(--muted)">src/controllers/detection.controller.ts</small></td>
-  <td>No direct outbound edge</td>
-  <td>createDetectionSchema node in src/validators/detection.validator.ts.</td>
 </tr>
 </table>
 
@@ -1280,19 +1272,19 @@ flowchart LR
     <h4>Key Files</h4>
     <table style="width:100%;font-size:0.85rem;">
       <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>pubspec.yaml</code></td><td>7 nodes</td></tr>
+      <tr><td><code>RINGKASAN.md</code></td><td>13 nodes</td></tr>
+<tr><td><code>pubspec.yaml</code></td><td>7 nodes</td></tr>
 <tr><td><code>lib/services/auth_service.dart</code></td><td>5 nodes</td></tr>
-<tr><td><code>lib/services/detection_service.dart</code></td><td>5 nodes</td></tr>
+<tr><td><code>lib/services/price_service.dart</code></td><td>5 nodes</td></tr>
 <tr><td><code>src/controllers/auth.controller.ts</code></td><td>5 nodes</td></tr>
 <tr><td><code>src/controllers/detection.controller.ts</code></td><td>5 nodes</td></tr>
 <tr><td><code>src/validators/auth.validator.ts</code></td><td>4 nodes</td></tr>
 <tr><td><code>ios/Runner/GeneratedPluginRegistrant.m</code></td><td>3 nodes</td></tr>
-<tr><td><code>lib/services/api_client.dart</code></td><td>3 nodes</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: imports x27, contains x21, imports x15, references x9. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+    <p>This section comes from graphify community clustering. Relationship summary: contains x36, imports x31, imports x19, references x9. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -2175,8 +2167,280 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 9. Detection History UI ====== -->
-<h2 id="detection-history-ui">9. Detection History UI</h2>
+<!-- ====== 9. Windows Flutter Window ====== -->
+<h2 id="windows-flutter-window">9. Windows Flutter Window</h2>
+<p>Windows Flutter Window groups implementation around pagedart, home, pages, homepage, mostly in lib/pages/home_page.dart, lib/pages/profile_page.dart. This section covers 23 nodes and 22 internal edges; the diagram shows only representative relationships to stay readable.</p>
+
+<div class="mermaid">
+%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
+flowchart LR
+    %% Section: Windows Flutter Window (23 nodes, 22 edges)
+    subgraph windows_flutter_window_lib_pages_home_page_dart_dac1f392["lib/pages/home_page.dart"]
+        lib_pages_home_page_dart_40a4c94d("home_page.dart")
+        services_price_service_dart_39a35e64("../services/price service.dart<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_card_423eed59("Card<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_clipoval_1de42e77("ClipOval<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_containe_95580790("Container<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_divider_b111bd57("Divider<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_homepage_93a2d514("HomePage<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_icon_93247660("Icon<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_padding_64ee72da("Padding<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_singlech_5de3fece("SingleChildScrollView<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_sizedbox_6539ffab("SizedBox<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_spacer_9ad98127("Spacer<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_text_35c79a4f("Text<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_homepage_9e51c3a1("_HomePageState<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_buildava_20e68ddb("_buildAvatarWidget<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_builddef_0a328460("_buildDefaultAvatar<br/><small>lib/pages/home_page.dart</small>")
+        d_usaha_nyawit_lib_pages_home_page_dart_buildfea_8a6cb3b0("_buildFeatureCard<br/><small>lib/pages/home_page.dart</small>")
+    end
+    auth_login_page_dart_b7104623("auth/login_page.dart<br/><small>lib/pages/profile_page.dart</small>")
+    lib_pages_home_page_dart_40a4c94d -->|imports| services_price_service_dart_39a35e64
+    lib_pages_home_page_dart_40a4c94d -->|imports| auth_login_page_dart_b7104623
+    %% Omitted for readability: 5 nodes, 0 edges
+    class lib_pages_home_page_dart_40a4c94d function;
+    class services_price_service_dart_39a35e64 function;
+    class d_usaha_nyawit_lib_pages_home_page_dart_card_423eed59 klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_clipoval_1de42e77 entry;
+    class d_usaha_nyawit_lib_pages_home_page_dart_containe_95580790 klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_divider_b111bd57 klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_homepage_93a2d514 klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_icon_93247660 klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_padding_64ee72da klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_singlech_5de3fece klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_sizedbox_6539ffab klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_spacer_9ad98127 klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_text_35c79a4f klass;
+    class d_usaha_nyawit_lib_pages_home_page_dart_homepage_9e51c3a1 function;
+    class d_usaha_nyawit_lib_pages_home_page_dart_buildava_20e68ddb function;
+    class d_usaha_nyawit_lib_pages_home_page_dart_builddef_0a328460 function;
+    class d_usaha_nyawit_lib_pages_home_page_dart_buildfea_8a6cb3b0 function;
+    class auth_login_page_dart_b7104623 function;
+    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
+    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
+    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
+    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
+    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
+    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
+    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
+    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
+    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
+</div>
+
+<h3>Call Details</h3>
+<table class="call-table">
+<tr>
+  <th style="width:5%">#</th>
+  <th style="width:28%">Node</th>
+  <th style="width:10%">Type</th>
+  <th style="width:17%">Caller</th>
+  <th style="width:20%">Callees</th>
+  <th style="width:20%">Description</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><code>home_page.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td><code>../services/price service.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small><br><code>auth/login_page.dart</code><br><small style="color:var(--muted)">lib/pages/profile_page.dart</small></td>
+  <td>Organizes documentation pages, navigation, or content lookup.</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><code>HomePage</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Organizes documentation pages, navigation, or content lookup.</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><code>_HomePageState</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Organizes documentation pages, navigation, or content lookup.</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><code>initState</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>initState node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><code>build</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>build node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><code>SingleChildScrollView</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>SingleChildScrollView node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><code>Container</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Container node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><code>SizedBox</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>SizedBox node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><code>_buildTodayPriceCard</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_buildTodayPriceCard node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><code>Card</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Card node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td><code>Icon</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Icon node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>12</td>
+  <td><code>Text</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Text node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>13</td>
+  <td><code>Spacer</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Spacer node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>Divider</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Divider node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>15</td>
+  <td><code>_buildPriceRow</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_buildPriceRow node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>16</td>
+  <td><code>Padding</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-class">Class</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>Padding node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>17</td>
+  <td><code>_buildAvatarWidget</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_buildAvatarWidget node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>18</td>
+  <td><code>ClipOval</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-cmd">Entry</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>ClipOval node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>19</td>
+  <td><code>_buildDefaultAvatar</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_buildDefaultAvatar node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>20</td>
+  <td><code>_buildFeatureCard</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_buildFeatureCard node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>21</td>
+  <td><code>../services/price_service.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>home_page.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td>No direct outbound edge</td>
+  <td>../services/price_service.dart node in lib/pages/home_page.dart.</td>
+</tr>
+<tr>
+  <td>22</td>
+  <td><code>auth/login_page.dart</code><br><small style="color:var(--muted)">lib/pages/profile_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td><code>home_page.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td>No direct outbound edge</td>
+  <td>Organizes documentation pages, navigation, or content lookup.</td>
+</tr>
+<tr>
+  <td>23</td>
+  <td><code>_buildInfoCard</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_buildInfoCard node in lib/pages/home_page.dart.</td>
+</tr>
+</table>
+
+<div class="grid">
+  <div class="card">
+    <h4>Key Files</h4>
+    <table style="width:100%;font-size:0.85rem;">
+      <tr><th>File</th><th>Coverage</th></tr>
+      <tr><td><code>lib/pages/home_page.dart</code></td><td>22 nodes</td></tr>
+<tr><td><code>lib/pages/profile_page.dart</code></td><td>1 nodes</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h4>Design Notes</h4>
+    <p>This section comes from graphify community clustering. Relationship summary: defines x20, imports x2. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
+  </div>
+</div>
+<hr>
+
+<!-- ====== 10. Detection History UI ====== -->
+<h2 id="detection-history-ui">10. Detection History UI</h2>
 <p>Detection History UI groups implementation around pagedart, pages, history, services, mostly in lib/pages/history_page.dart, pages/ai/image_detection_page.dart, lib/pages/profile_page.dart. This section covers 16 nodes and 15 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -2323,14 +2587,6 @@ flowchart LR
 </tr>
 <tr>
   <td>11</td>
-  <td><code>_showDeleteDialog</code><br><small style="color:var(--muted)">lib/pages/history_page.dart</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>_showDeleteDialog node in lib/pages/history_page.dart.</td>
-</tr>
-<tr>
-  <td>12</td>
   <td><code>../../services/detection_service.dart</code><br><small style="color:var(--muted)">pages/ai/image_detection_page.dart</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>history_page.dart</code><br><small style="color:var(--muted)">lib/pages/history_page.dart</small></td>
@@ -2338,7 +2594,7 @@ flowchart LR
   <td>../../services/detection_service.dart node in pages/ai/image_detection_page.dart.</td>
 </tr>
 <tr>
-  <td>13</td>
+  <td>12</td>
   <td><code>../services/api_client.dart</code><br><small style="color:var(--muted)">lib/pages/profile_page.dart</small></td>
   <td><span class="tag tag-endpoint">API</span></td>
   <td><code>history_page.dart</code><br><small style="color:var(--muted)">lib/pages/history_page.dart</small></td>
@@ -2346,12 +2602,20 @@ flowchart LR
   <td>../services/api_client.dart node in lib/pages/profile_page.dart.</td>
 </tr>
 <tr>
-  <td>14</td>
+  <td>13</td>
   <td><code>package:intl/intl.dart</code><br><small style="color:var(--muted)">lib/pages/history_page.dart</small></td>
   <td><span class="tag tag-func">Function</span></td>
   <td><code>history_page.dart</code><br><small style="color:var(--muted)">lib/pages/history_page.dart</small></td>
   <td>No direct outbound edge</td>
   <td>package:intl/intl.dart node in lib/pages/history_page.dart.</td>
+</tr>
+<tr>
+  <td>14</td>
+  <td><code>_showDeleteDialog</code><br><small style="color:var(--muted)">lib/pages/history_page.dart</small></td>
+  <td><span class="tag tag-func">Function</span></td>
+  <td>External entry / no inbound edge</td>
+  <td>No direct outbound edge</td>
+  <td>_showDeleteDialog node in lib/pages/history_page.dart.</td>
 </tr>
 <tr>
   <td>15</td>
@@ -2388,8 +2652,8 @@ flowchart LR
 </div>
 <hr>
 
-<!-- ====== 10. Palm Detector ML Engine ====== -->
-<h2 id="palm-detector-ml-engine">10. Palm Detector ML Engine</h2>
+<!-- ====== 11. Palm Detector ML Engine ====== -->
+<h2 id="palm-detector-ml-engine">11. Palm Detector ML Engine</h2>
 <p>Palm Detector ML Engine groups implementation around palm, detectordart, services, dartio, mostly in lib/services/palm_detector.dart. This section covers 15 nodes and 14 internal edges; the diagram shows only representative relationships to stay readable.</p>
 
 <div class="mermaid">
@@ -2586,156 +2850,6 @@ flowchart LR
   <div class="card">
     <h4>Design Notes</h4>
     <p>This section comes from graphify community clustering. Relationship summary: defines x8, imports x6. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
-  </div>
-</div>
-<hr>
-
-<!-- ====== 11. Windows Flutter Window ====== -->
-<h2 id="windows-flutter-window">11. Windows Flutter Window</h2>
-<p>Windows Flutter Window groups implementation around pagedart, home, pages, homepage, mostly in lib/pages/home_page.dart, lib/pages/profile_page.dart. This section covers 10 nodes and 9 internal edges; the diagram shows only representative relationships to stay readable.</p>
-
-<div class="mermaid">
-%%{init: {"theme": "dark", "themeVariables": {"fontSize": "15.0px", "fontFamily": "Segoe UI, system-ui, sans-serif", "primaryColor": "#1e293b", "primaryTextColor": "#e2e8f0", "primaryBorderColor": "#38bdf8", "secondaryColor": "#0f172a", "tertiaryColor": "#334155", "lineColor": "#64748b", "textColor": "#e2e8f0"}, "flowchart": {"htmlLabels": true, "curve": "basis", "nodeSpacing": 48, "rankSpacing": 64, "padding": 14, "diagramPadding": 10, "useMaxWidth": true}}}%%
-flowchart LR
-    %% Section: Windows Flutter Window (10 nodes, 9 edges)
-    subgraph windows_flutter_window_lib_pages_home_page_dart_dac1f392["lib/pages/home_page.dart"]
-        lib_pages_home_page_dart_40a4c94d("home_page.dart")
-        d_usaha_nyawit_lib_pages_home_page_dart_card_423eed59("Card<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_containe_95580790("Container<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_homepage_93a2d514("HomePage<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_singlech_5de3fece("SingleChildScrollView<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_sizedbox_6539ffab("SizedBox<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_buildfea_8a6cb3b0("_buildFeatureCard<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_buildinf_c93be984("_buildInfoCard<br/><small>lib/pages/home_page.dart</small>")
-        d_usaha_nyawit_lib_pages_home_page_dart_build_a2e6349f("build<br/><small>lib/pages/home_page.dart</small>")
-    end
-    auth_login_page_dart_b7104623("auth/login_page.dart<br/><small>lib/pages/profile_page.dart</small>")
-    lib_pages_home_page_dart_40a4c94d -->|imports| auth_login_page_dart_b7104623
-    class lib_pages_home_page_dart_40a4c94d function;
-    class d_usaha_nyawit_lib_pages_home_page_dart_card_423eed59 klass;
-    class d_usaha_nyawit_lib_pages_home_page_dart_containe_95580790 klass;
-    class d_usaha_nyawit_lib_pages_home_page_dart_homepage_93a2d514 klass;
-    class d_usaha_nyawit_lib_pages_home_page_dart_singlech_5de3fece klass;
-    class d_usaha_nyawit_lib_pages_home_page_dart_sizedbox_6539ffab klass;
-    class d_usaha_nyawit_lib_pages_home_page_dart_buildfea_8a6cb3b0 function;
-    class d_usaha_nyawit_lib_pages_home_page_dart_buildinf_c93be984 function;
-    class d_usaha_nyawit_lib_pages_home_page_dart_build_a2e6349f function;
-    class auth_login_page_dart_b7104623 function;
-    classDef entry fill:#422006,stroke:#fbbf24,color:#fde68a,stroke-width:1px;
-    classDef api fill:#450a0a,stroke:#f87171,color:#fee2e2,stroke-width:1px;
-    classDef async fill:#2e1065,stroke:#a78bfa,color:#ede9fe,stroke-width:1px;
-    classDef klass fill:#064e3b,stroke:#34d399,color:#d1fae5,stroke-width:1px;
-    classDef ui fill:#831843,stroke:#f472b6,color:#fce7f3,stroke-width:1px;
-    classDef module fill:#172554,stroke:#60a5fa,color:#dbeafe,stroke-width:1px;
-    classDef test fill:#3f3f46,stroke:#a1a1aa,color:#f4f4f5,stroke-width:1px;
-    classDef concept fill:#292524,stroke:#a8a29e,color:#fafaf9,stroke-dasharray:4 3;
-    classDef function fill:#0f172a,stroke:#38bdf8,color:#e0f2fe,stroke-width:1px;
-</div>
-
-<h3>Call Details</h3>
-<table class="call-table">
-<tr>
-  <th style="width:5%">#</th>
-  <th style="width:28%">Node</th>
-  <th style="width:10%">Type</th>
-  <th style="width:17%">Caller</th>
-  <th style="width:20%">Callees</th>
-  <th style="width:20%">Description</th>
-</tr>
-<tr>
-  <td>1</td>
-  <td><code>home_page.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td><code>auth/login_page.dart</code><br><small style="color:var(--muted)">lib/pages/profile_page.dart</small></td>
-  <td>Organizes documentation pages, navigation, or content lookup.</td>
-</tr>
-<tr>
-  <td>2</td>
-  <td><code>HomePage</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Organizes documentation pages, navigation, or content lookup.</td>
-</tr>
-<tr>
-  <td>3</td>
-  <td><code>build</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>build node in lib/pages/home_page.dart.</td>
-</tr>
-<tr>
-  <td>4</td>
-  <td><code>SingleChildScrollView</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>SingleChildScrollView node in lib/pages/home_page.dart.</td>
-</tr>
-<tr>
-  <td>5</td>
-  <td><code>Container</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Container node in lib/pages/home_page.dart.</td>
-</tr>
-<tr>
-  <td>6</td>
-  <td><code>SizedBox</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>SizedBox node in lib/pages/home_page.dart.</td>
-</tr>
-<tr>
-  <td>7</td>
-  <td><code>_buildFeatureCard</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>_buildFeatureCard node in lib/pages/home_page.dart.</td>
-</tr>
-<tr>
-  <td>8</td>
-  <td><code>Card</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-class">Class</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>Card node in lib/pages/home_page.dart.</td>
-</tr>
-<tr>
-  <td>9</td>
-  <td><code>auth/login_page.dart</code><br><small style="color:var(--muted)">lib/pages/profile_page.dart</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td><code>home_page.dart</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td>No direct outbound edge</td>
-  <td>Organizes documentation pages, navigation, or content lookup.</td>
-</tr>
-<tr>
-  <td>10</td>
-  <td><code>_buildInfoCard</code><br><small style="color:var(--muted)">lib/pages/home_page.dart</small></td>
-  <td><span class="tag tag-func">Function</span></td>
-  <td>External entry / no inbound edge</td>
-  <td>No direct outbound edge</td>
-  <td>_buildInfoCard node in lib/pages/home_page.dart.</td>
-</tr>
-</table>
-
-<div class="grid">
-  <div class="card">
-    <h4>Key Files</h4>
-    <table style="width:100%;font-size:0.85rem;">
-      <tr><th>File</th><th>Coverage</th></tr>
-      <tr><td><code>lib/pages/home_page.dart</code></td><td>9 nodes</td></tr>
-<tr><td><code>lib/pages/profile_page.dart</code></td><td>1 nodes</td></tr>
-    </table>
-  </div>
-  <div class="card">
-    <h4>Design Notes</h4>
-    <p>This section comes from graphify community clustering. Relationship summary: defines x8, imports x1. The diagram prioritizes high-confidence calls or usage relationships; the table keeps the broader node inventory.</p>
   </div>
 </div>
 <hr>
@@ -3525,17 +3639,17 @@ flowchart LR
   <div class="card">
     <h4>Graph</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>Nodes</td><td>325</td></tr>
-      <tr><td>Edges</td><td>359</td></tr>
+      <tr><td>Nodes</td><td>359</td></tr>
+      <tr><td>Edges</td><td>401</td></tr>
       <tr><td>Hyperedges</td><td>3</td></tr>
-      <tr><td>Communities</td><td>40</td></tr>
+      <tr><td>Communities</td><td>41</td></tr>
       <tr><td>Documented Sections</td><td>15</td></tr>
     </table>
   </div>
   <div class="card">
     <h4>Edge Confidence</h4>
     <table style="width:100%;font-size:0.85rem;">
-      <tr><td>EXTRACTED</td><td>345</td></tr>
+      <tr><td>EXTRACTED</td><td>387</td></tr>
       <tr><td>INFERRED</td><td>14</td></tr>
       <tr><td>AMBIGUOUS</td><td>0</td></tr>
     </table>
@@ -3544,7 +3658,7 @@ flowchart LR
 
 <div style="text-align:center; padding:40px 0; color: var(--muted); font-size:0.9rem;">
   <p>nyawit — Architecture Documentation</p>
-  <p>Generated: 2026-05-17 12:57 UTC · graphify callflow-html</p>
+  <p>Generated: 2026-05-17 13:19 UTC · graphify callflow-html</p>
 </div>
 
 </div><!-- .container -->

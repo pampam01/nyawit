@@ -1,16 +1,16 @@
 # Graph Report - nyawit  (2026-05-17)
 
 ## Corpus Check
-- 63 files · ~23,686 words
+- 67 files · ~31,808 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 325 nodes · 359 edges · 40 communities (28 shown, 12 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.84)
+- 359 nodes · 401 edges · 41 communities (29 shown, 12 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 14 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `9eead1c4`
+- Built from commit: `8984e5d7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -44,18 +44,19 @@
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
 - [[_COMMUNITY_Community 39|Community 39]]
+- [[_COMMUNITY_Community 40|Community 40]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `package:flutter/material.dart` - 12 edges
-2. `Nyawit Flutter App` - 7 edges
-3. `AppDelegate` - 6 edges
-4. `../models/detection.dart` - 6 edges
-5. `Create()` - 6 edges
-6. `Destroy()` - 6 edges
-7. `../../services/auth_service.dart` - 5 edges
-8. `saveBase64Image()` - 5 edges
-9. `MessageHandler()` - 5 edges
-10. `RunnerTests` - 4 edges
+2. `dart:convert` - 7 edges
+3. `Nyawit Flutter App` - 7 edges
+4. `AppDelegate` - 6 edges
+5. `../models/detection.dart` - 6 edges
+6. `Create()` - 6 edges
+7. `Destroy()` - 6 edges
+8. `🚀 Fitur Utama yang Telah Diimplementasikan` - 6 edges
+9. `../../services/auth_service.dart` - 5 edges
+10. `authMiddleware()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Detection Table (userId, total, dominantLabel, counts, detections, imagePath)` --conceptually_related_to--> `TFLite Flutter (AI Inference)`  [INFERRED]
@@ -74,7 +75,7 @@
 - **Database Schema (User + Detection)** — migration_sql_user_table, migration_sql_detection_table, migration_sql_user_detection_fk [EXTRACTED 1.00]
 - **Nyawit App Branding Assets** — android_ic_launcher, ios_app_icon, ios_launch_image, macos_app_icon, web_favicon, web_icons [INFERRED 0.95]
 
-## Communities (40 total, 12 thin omitted)
+## Communities (41 total, 12 thin omitted)
 
 ### Community 0 - "Auth & Login UI"
 Cohesion: 0.11
@@ -85,16 +86,16 @@ Cohesion: 0.06
 Nodes (31): build, _buildDetailedResults, Column, dispose, Divider, ImageDetectionPage, _ImageDetectionPageState, initState (+23 more)
 
 ### Community 2 - "Backend API Services"
-Cohesion: 0.12
-Nodes (20): getMe(), login(), register(), updateProfile(), createDetection(), deleteDetection(), getDetectionById(), getDetections() (+12 more)
+Cohesion: 0.11
+Nodes (23): getMe(), login(), register(), updateProfile(), createDetection(), deleteDetection(), getDetectionById(), getDetections() (+15 more)
 
 ### Community 3 - "Windows Native Runner"
 Cohesion: 0.11
 Nodes (19): RegisterPlugins(), FlutterWindow(), OnCreate(), Create(), Destroy(), EnableFullDpiSupportIfAvailable(), GetClientArea(), GetThisFromHandle() (+11 more)
 
 ### Community 4 - "API Client & Auth Services"
-Cohesion: 0.16
-Nodes (11): api_client.dart, ApiClient, AuthService, jsonDecode, _saveToken, DetectionService, jsonDecode, dart:convert (+3 more)
+Cohesion: 0.15
+Nodes (12): 1. Sistem Autentikasi & Keamanan (Auth & Security), 2. Personalisasi Akun Premium (Forest Green Aesthetic), 3. Sistem Deteksi AI Berbasis Gambar (Image AI Detection), 4. Deteksi Real-Time Kamera Live (Live Camera Detection) — *⭐ Fitur Performa Tinggi*, 5. Penyimpanan Gambar Hybrid (Hybrid Image Storage) — *⭐ Fitur Unggulan*, 🛠️ Arsitektur & Teknologi Stack, 🚀 Fitur Utama yang Telah Diimplementasikan, 📈 Perkembangan Struktur Kode (Graphify watch) (+4 more)
 
 ### Community 5 - "Palm Detector ML Engine"
 Cohesion: 0.13
@@ -137,15 +138,19 @@ Cohesion: 0.47
 Nodes (4): wWinMain(), CreateAndAttachConsole(), GetCommandLineArguments(), Utf8FromUtf16()
 
 ### Community 17 - "Windows Flutter Window"
-Cohesion: 0.2
-Nodes (9): auth/login_page.dart, build, _buildFeatureCard, _buildInfoCard, Card, Container, HomePage, SingleChildScrollView (+1 more)
+Cohesion: 0.09
+Nodes (22): auth/login_page.dart, build, _buildAvatarWidget, _buildDefaultAvatar, _buildFeatureCard, _buildInfoCard, _buildPriceRow, _buildTodayPriceCard (+14 more)
 
 ### Community 37 - "Community 37"
 Cohesion: 0.08
 Nodes (23): build, _buildAvatarWidget, _buildDefaultAvatar, _buildPresetAvatarOption, _buildProfileTile, _buildSourceButton, ClipOval, Container (+15 more)
 
+### Community 40 - "Community 40"
+Cohesion: 0.14
+Nodes (13): api_client.dart, ApiClient, AuthService, jsonDecode, _saveToken, DetectionService, jsonDecode, PalmPriceData (+5 more)
+
 ## Knowledge Gaps
-- **167 isolated node(s):** `MainActivity`, `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry`, `MyApp`, `main` (+162 more)
+- **192 isolated node(s):** `MainActivity`, `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry`, `MyApp`, `main` (+187 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -153,16 +158,16 @@ Nodes (23): build, _buildAvatarWidget, _buildDefaultAvatar, _buildPresetAvatarOp
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `package:flutter/material.dart` connect `AI Feature Pages` to `Auth & Login UI`, `Image Detection UI`, `Community 37`, `Detection History UI`, `Navigation & Main Pages`, `App Entry Point`, `Windows Flutter Window`?**
-  _High betweenness centrality (0.178) - this node is a cross-community bridge._
-- **Why does `../models/detection.dart` connect `API Client & Auth Services` to `Detection History UI`, `Image Detection UI`, `AI Feature Pages`, `Palm Detector ML Engine`?**
-  _High betweenness centrality (0.048) - this node is a cross-community bridge._
-- **Why does `dart:convert` connect `API Client & Auth Services` to `Community 37`?**
-  _High betweenness centrality (0.027) - this node is a cross-community bridge._
+  _High betweenness centrality (0.160) - this node is a cross-community bridge._
+- **Why does `dart:convert` connect `Community 40` to `Windows Flutter Window`, `Community 37`, `Image Detection UI`?**
+  _High betweenness centrality (0.045) - this node is a cross-community bridge._
+- **Why does `../models/detection.dart` connect `Community 40` to `Detection History UI`, `Image Detection UI`, `AI Feature Pages`, `Palm Detector ML Engine`?**
+  _High betweenness centrality (0.037) - this node is a cross-community bridge._
 - **What connects `MainActivity`, `Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages.`, `-registerWithRegistry` to the rest of the system?**
-  _167 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _192 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Auth & Login UI` be split into smaller, more focused modules?**
   _Cohesion score 0.11 - nodes in this community are weakly interconnected._
 - **Should `Image Detection UI` be split into smaller, more focused modules?**
   _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Backend API Services` be split into smaller, more focused modules?**
-  _Cohesion score 0.12 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11 - nodes in this community are weakly interconnected._

@@ -502,15 +502,6 @@
       "norm_label": "card"
     },
     {
-      "label": "_showDeleteDialog",
-      "file_type": "code",
-      "source_file": "lib/pages/history_page.dart",
-      "source_location": null,
-      "id": "d_usaha_nyawit_lib_pages_history_page_dart_showdeletedialog",
-      "community": 8,
-      "norm_label": "_showdeletedialog"
-    },
-    {
       "label": "../../services/detection_service.dart",
       "file_type": "code",
       "source_file": "lib/pages/ai/image_detection_page.dart",
@@ -525,7 +516,7 @@
       "source_file": "lib/utils/box_painter.dart",
       "source_location": null,
       "id": "models_detection_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "../models/detection.dart"
     },
     {
@@ -565,6 +556,24 @@
       "norm_label": "homepage"
     },
     {
+      "label": "_HomePageState",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_homepagestate",
+      "community": 17,
+      "norm_label": "_homepagestate"
+    },
+    {
+      "label": "initState",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_initstate",
+      "community": 17,
+      "norm_label": "initstate"
+    },
+    {
       "label": "build",
       "file_type": "code",
       "source_file": "lib/pages/home_page.dart",
@@ -601,13 +610,13 @@
       "norm_label": "sizedbox"
     },
     {
-      "label": "_buildFeatureCard",
+      "label": "_buildTodayPriceCard",
       "file_type": "code",
       "source_file": "lib/pages/home_page.dart",
       "source_location": null,
-      "id": "d_usaha_nyawit_lib_pages_home_page_dart_buildfeaturecard",
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_buildtodaypricecard",
       "community": 17,
-      "norm_label": "_buildfeaturecard"
+      "norm_label": "_buildtodaypricecard"
     },
     {
       "label": "Card",
@@ -617,6 +626,114 @@
       "id": "d_usaha_nyawit_lib_pages_home_page_dart_card",
       "community": 17,
       "norm_label": "card"
+    },
+    {
+      "label": "Icon",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_icon",
+      "community": 17,
+      "norm_label": "icon"
+    },
+    {
+      "label": "Text",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_text",
+      "community": 17,
+      "norm_label": "text"
+    },
+    {
+      "label": "Spacer",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_spacer",
+      "community": 17,
+      "norm_label": "spacer"
+    },
+    {
+      "label": "Divider",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_divider",
+      "community": 17,
+      "norm_label": "divider"
+    },
+    {
+      "label": "_buildPriceRow",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_buildpricerow",
+      "community": 17,
+      "norm_label": "_buildpricerow"
+    },
+    {
+      "label": "Padding",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_padding",
+      "community": 17,
+      "norm_label": "padding"
+    },
+    {
+      "label": "_buildAvatarWidget",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_buildavatarwidget",
+      "community": 17,
+      "norm_label": "_buildavatarwidget"
+    },
+    {
+      "label": "ClipOval",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_clipoval",
+      "community": 17,
+      "norm_label": "clipoval"
+    },
+    {
+      "label": "_buildDefaultAvatar",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_builddefaultavatar",
+      "community": 17,
+      "norm_label": "_builddefaultavatar"
+    },
+    {
+      "label": "_buildFeatureCard",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_home_page_dart_buildfeaturecard",
+      "community": 17,
+      "norm_label": "_buildfeaturecard"
+    },
+    {
+      "label": "dart:convert",
+      "file_type": "code",
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "id": "dart_convert",
+      "community": 40,
+      "norm_label": "dart:convert"
+    },
+    {
+      "label": "../services/price_service.dart",
+      "file_type": "code",
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "id": "services_price_service_dart",
+      "community": 17,
+      "norm_label": "../services/price_service.dart"
     },
     {
       "label": "auth/login_page.dart",
@@ -959,15 +1076,6 @@
       "id": "d_usaha_nyawit_lib_pages_profile_page_dart_listtile",
       "community": 37,
       "norm_label": "listtile"
-    },
-    {
-      "label": "dart:convert",
-      "file_type": "code",
-      "source_file": "lib/services/detection_service.dart",
-      "source_location": null,
-      "id": "dart_convert",
-      "community": 4,
-      "norm_label": "dart:convert"
     },
     {
       "label": "package:image_picker/image_picker.dart",
@@ -1524,7 +1632,7 @@
       "source_file": "lib/services/api_client.dart",
       "source_location": null,
       "id": "lib_services_api_client_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "api_client.dart"
     },
     {
@@ -1533,7 +1641,7 @@
       "source_file": "lib/services/api_client.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_api_client_dart_apiclient",
-      "community": 4,
+      "community": 40,
       "norm_label": "apiclient"
     },
     {
@@ -1542,7 +1650,7 @@
       "source_file": "lib/services/api_client.dart",
       "source_location": null,
       "id": "package_http_http_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "package:http/http.dart"
     },
     {
@@ -1551,7 +1659,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "package_shared_preferences_shared_preferences_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "package:shared_preferences/shared_preferences.dart"
     },
     {
@@ -1560,7 +1668,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "lib_services_auth_service_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "auth_service.dart"
     },
     {
@@ -1569,7 +1677,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_auth_service_dart_authservice",
-      "community": 4,
+      "community": 40,
       "norm_label": "authservice"
     },
     {
@@ -1578,7 +1686,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_auth_service_dart_savetoken",
-      "community": 4,
+      "community": 40,
       "norm_label": "_savetoken"
     },
     {
@@ -1587,16 +1695,16 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_auth_service_dart_jsondecode",
-      "community": 4,
+      "community": 40,
       "norm_label": "jsondecode"
     },
     {
       "label": "api_client.dart",
       "file_type": "code",
-      "source_file": "lib/services/detection_service.dart",
+      "source_file": "lib/services/price_service.dart",
       "source_location": null,
       "id": "api_client_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "api_client.dart"
     },
     {
@@ -1605,7 +1713,7 @@
       "source_file": "lib/services/detection_service.dart",
       "source_location": null,
       "id": "lib_services_detection_service_dart",
-      "community": 4,
+      "community": 40,
       "norm_label": "detection_service.dart"
     },
     {
@@ -1614,7 +1722,7 @@
       "source_file": "lib/services/detection_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_detection_service_dart_detectionservice",
-      "community": 4,
+      "community": 40,
       "norm_label": "detectionservice"
     },
     {
@@ -1733,6 +1841,33 @@
       "id": "package_image_image_dart",
       "community": 5,
       "norm_label": "package:image/image.dart"
+    },
+    {
+      "label": "price_service.dart",
+      "file_type": "code",
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "id": "lib_services_price_service_dart",
+      "community": 40,
+      "norm_label": "price_service.dart"
+    },
+    {
+      "label": "PalmPriceData",
+      "file_type": "code",
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_services_price_service_dart_palmpricedata",
+      "community": 40,
+      "norm_label": "palmpricedata"
+    },
+    {
+      "label": "PriceService",
+      "file_type": "code",
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_services_price_service_dart_priceservice",
+      "community": 40,
+      "norm_label": "priceservice"
     },
     {
       "label": "box_painter.dart",
@@ -2017,7 +2152,7 @@
       "label": "app",
       "file_type": "code",
       "source_file": "nyawit-api/src/index.ts",
-      "source_location": "L10",
+      "source_location": "L11",
       "id": "src_index_app",
       "community": 2,
       "norm_label": "app"
@@ -2113,6 +2248,33 @@
       "norm_label": "deletedetection()"
     },
     {
+      "label": "price.controller.ts",
+      "file_type": "code",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L1",
+      "id": "nyawit_api_src_controllers_price_controller_ts",
+      "community": 2,
+      "norm_label": "price.controller.ts"
+    },
+    {
+      "label": "getSeedForDate()",
+      "file_type": "code",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L8",
+      "id": "controllers_price_controller_getseedfordate",
+      "community": 2,
+      "norm_label": "getseedfordate()"
+    },
+    {
+      "label": "getTodayPrices()",
+      "file_type": "code",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L16",
+      "id": "controllers_price_controller_gettodayprices",
+      "community": 2,
+      "norm_label": "gettodayprices()"
+    },
+    {
       "label": "jwt.ts",
       "file_type": "code",
       "source_file": "nyawit-api/src/lib/jwt.ts",
@@ -2199,6 +2361,24 @@
       "source_file": "nyawit-api/src/routes/detection.routes.ts",
       "source_location": "L10",
       "id": "routes_detection_routes_router",
+      "community": 2,
+      "norm_label": "router"
+    },
+    {
+      "label": "price.routes.ts",
+      "file_type": "code",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L1",
+      "id": "nyawit_api_src_routes_price_routes_ts",
+      "community": 2,
+      "norm_label": "price.routes.ts"
+    },
+    {
+      "label": "router",
+      "file_type": "code",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L5",
+      "id": "routes_price_routes_router",
       "community": 2,
       "norm_label": "router"
     },
@@ -2707,6 +2887,123 @@
       "norm_label": "getting started"
     },
     {
+      "label": "RINGKASAN.md",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L1",
+      "id": "ringkasan_md",
+      "community": 4,
+      "norm_label": "ringkasan.md"
+    },
+    {
+      "label": "\ud83c\udf34 RINGKASAN PROYEK NYAWIT: PALM OIL AI DETECTION",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L1",
+      "id": "nyawit_ringkasan_ringkasan_proyek_nyawit_palm_oil_ai_detection",
+      "community": 4,
+      "norm_label": "\ud83c\udf34 ringkasan proyek nyawit: palm oil ai detection"
+    },
+    {
+      "label": "\ud83d\ude80 Fitur Utama yang Telah Diimplementasikan",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L7",
+      "id": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan",
+      "community": 4,
+      "norm_label": "\ud83d\ude80 fitur utama yang telah diimplementasikan"
+    },
+    {
+      "label": "1. Sistem Autentikasi & Keamanan (Auth & Security)",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L9",
+      "id": "nyawit_ringkasan_1_sistem_autentikasi_keamanan_auth_security",
+      "community": 4,
+      "norm_label": "1. sistem autentikasi & keamanan (auth & security)"
+    },
+    {
+      "label": "2. Personalisasi Akun Premium (Forest Green Aesthetic)",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L15",
+      "id": "nyawit_ringkasan_2_personalisasi_akun_premium_forest_green_aesthetic",
+      "community": 4,
+      "norm_label": "2. personalisasi akun premium (forest green aesthetic)"
+    },
+    {
+      "label": "3. Sistem Deteksi AI Berbasis Gambar (Image AI Detection)",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L21",
+      "id": "nyawit_ringkasan_3_sistem_deteksi_ai_berbasis_gambar_image_ai_detection",
+      "community": 4,
+      "norm_label": "3. sistem deteksi ai berbasis gambar (image ai detection)"
+    },
+    {
+      "label": "4. Deteksi Real-Time Kamera Live (Live Camera Detection) \u2014 *\u2b50 Fitur Performa Tinggi*",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L26",
+      "id": "nyawit_ringkasan_4_deteksi_real_time_kamera_live_live_camera_detection_fitur_performa_tinggi",
+      "community": 4,
+      "norm_label": "4. deteksi real-time kamera live (live camera detection) \u2014 *\u2b50 fitur performa tinggi*"
+    },
+    {
+      "label": "5. Penyimpanan Gambar Hybrid (Hybrid Image Storage) \u2014 *\u2b50 Fitur Unggulan*",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L38",
+      "id": "nyawit_ringkasan_5_penyimpanan_gambar_hybrid_hybrid_image_storage_fitur_unggulan",
+      "community": 4,
+      "norm_label": "5. penyimpanan gambar hybrid (hybrid image storage) \u2014 *\u2b50 fitur unggulan*"
+    },
+    {
+      "label": "\ud83d\udee0\ufe0f Arsitektur & Teknologi Stack",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L46",
+      "id": "nyawit_ringkasan_arsitektur_teknologi_stack",
+      "community": 4,
+      "norm_label": "\ud83d\udee0\ufe0f arsitektur & teknologi stack"
+    },
+    {
+      "label": "\ud83d\udcc1 Struktur Berkas Utama yang Dikembangkan/Dimodifikasi",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L60",
+      "id": "nyawit_ringkasan_struktur_berkas_utama_yang_dikembangkan_dimodifikasi",
+      "community": 4,
+      "norm_label": "\ud83d\udcc1 struktur berkas utama yang dikembangkan/dimodifikasi"
+    },
+    {
+      "label": "\ud83d\udcf1 Sisi Frontend (Flutter - `/lib`)",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L62",
+      "id": "nyawit_ringkasan_sisi_frontend_flutter_lib",
+      "community": 4,
+      "norm_label": "\ud83d\udcf1 sisi frontend (flutter - `/lib`)"
+    },
+    {
+      "label": "\ud83d\udcbb Sisi Backend (Node.js - `/nyawit-api`)",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L74",
+      "id": "nyawit_ringkasan_sisi_backend_node_js_nyawit_api",
+      "community": 4,
+      "norm_label": "\ud83d\udcbb sisi backend (node.js - `/nyawit-api`)"
+    },
+    {
+      "label": "\ud83d\udcc8 Perkembangan Struktur Kode (Graphify watch)",
+      "file_type": "document",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L84",
+      "id": "nyawit_ringkasan_perkembangan_struktur_kode_graphify_watch",
+      "community": 4,
+      "norm_label": "\ud83d\udcc8 perkembangan struktur kode (graphify watch)"
+    },
+    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
@@ -2723,6 +3020,15 @@
       "id": "launchimage_imageset_readme_launch_screen_assets",
       "community": 39,
       "norm_label": "launch screen assets"
+    },
+    {
+      "label": "_showDeleteDialog",
+      "file_type": "code",
+      "source_file": "lib/pages/history_page.dart",
+      "source_location": null,
+      "community": 8,
+      "norm_label": "_showdeletedialog",
+      "id": "d_usaha_nyawit_lib_pages_history_page_dart_showdeletedialog"
     },
     {
       "label": "Padding",
@@ -2774,7 +3080,7 @@
       "file_type": "code",
       "source_file": "lib/services/detection_service.dart",
       "source_location": null,
-      "community": 4,
+      "community": 40,
       "norm_label": "jsondecode",
       "id": "d_usaha_nyawit_lib_services_detection_service_dart_jsondecode"
     },
@@ -3617,16 +3923,6 @@
       "target": "d_usaha_nyawit_lib_pages_history_page_dart_card"
     },
     {
-      "relation": "defines",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/pages/history_page.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_pages_history_page_dart",
-      "target": "d_usaha_nyawit_lib_pages_history_page_dart_showdeletedialog"
-    },
-    {
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -3665,6 +3961,16 @@
       "weight": 1.0,
       "source": "lib_pages_history_page_dart",
       "target": "package_intl_intl_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/history_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_history_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_history_page_dart_showdeletedialog"
     },
     {
       "relation": "defines",
@@ -3750,6 +4056,16 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "services_api_client_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "lib/pages/profile_page.dart",
       "source_location": null,
       "weight": 1.0,
@@ -3765,6 +4081,26 @@
       "weight": 1.0,
       "source": "lib_pages_home_page_dart",
       "target": "d_usaha_nyawit_lib_pages_home_page_dart_homepage"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_homepagestate"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_initstate"
     },
     {
       "relation": "defines",
@@ -3814,7 +4150,7 @@
       "source_location": null,
       "weight": 1.0,
       "source": "lib_pages_home_page_dart",
-      "target": "d_usaha_nyawit_lib_pages_home_page_dart_buildfeaturecard"
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_buildtodaypricecard"
     },
     {
       "relation": "defines",
@@ -3825,6 +4161,126 @@
       "weight": 1.0,
       "source": "lib_pages_home_page_dart",
       "target": "d_usaha_nyawit_lib_pages_home_page_dart_card"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_icon"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_text"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_spacer"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_divider"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_buildpricerow"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_padding"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_buildavatarwidget"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_clipoval"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_builddefaultavatar"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_home_page_dart_buildfeaturecard"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/home_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_home_page_dart",
+      "target": "services_price_service_dart"
     },
     {
       "relation": "imports",
@@ -3845,6 +4301,66 @@
       "weight": 1.0,
       "source": "lib_pages_home_page_dart",
       "target": "d_usaha_nyawit_lib_pages_home_page_dart_buildinfocard"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/profile_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_profile_page_dart",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/image_detection_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_image_detection_page_dart",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/api_client.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_api_client_dart",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/auth_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_auth_service_dart",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/detection_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_detection_service_dart",
+      "target": "dart_convert"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_price_service_dart",
+      "target": "dart_convert"
     },
     {
       "relation": "imports",
@@ -4214,47 +4730,7 @@
       "source_location": null,
       "weight": 1.0,
       "source": "lib_pages_profile_page_dart",
-      "target": "dart_convert"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/pages/profile_page.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_pages_profile_page_dart",
       "target": "package_image_picker_image_picker_dart"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/api_client.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_services_api_client_dart",
-      "target": "dart_convert"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/auth_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_services_auth_service_dart",
-      "target": "dart_convert"
-    },
-    {
-      "relation": "imports",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "lib/services/detection_service.dart",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "lib_services_detection_service_dart",
-      "target": "dart_convert"
     },
     {
       "relation": "imports",
@@ -4967,6 +5443,16 @@
       "target": "api_client_dart"
     },
     {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_price_service_dart",
+      "target": "api_client_dart"
+    },
+    {
       "relation": "defines",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -5105,6 +5591,26 @@
       "weight": 1.0,
       "source": "lib_services_palm_detector_dart",
       "target": "package_image_image_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_price_service_dart",
+      "target": "d_usaha_nyawit_lib_services_price_service_dart_palmpricedata"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/services/price_service.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_services_price_service_dart",
+      "target": "d_usaha_nyawit_lib_services_price_service_dart_priceservice"
     },
     {
       "relation": "defines",
@@ -5342,6 +5848,17 @@
       "target": "nyawit_api_src_routes_detection_routes_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/index.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_index_ts",
+      "target": "nyawit_api_src_routes_price_routes_ts"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "nyawit-api/src/index.ts",
@@ -5435,9 +5952,9 @@
       "source_file": "nyawit-api/src/controllers/auth.controller.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_controllers_auth_controller_ts",
-      "target": "nyawit_api_src_utils_file_ts",
-      "confidence_score": 1.0
+      "target": "nyawit_api_src_utils_file_ts"
     },
     {
       "relation": "imports",
@@ -5446,9 +5963,9 @@
       "source_file": "nyawit-api/src/controllers/auth.controller.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_controllers_auth_controller_ts",
-      "target": "utils_file_savebase64image",
-      "confidence_score": 1.0
+      "target": "utils_file_savebase64image"
     },
     {
       "relation": "contains",
@@ -5618,9 +6135,9 @@
       "source_file": "nyawit-api/src/controllers/detection.controller.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_controllers_detection_controller_ts",
-      "target": "nyawit_api_src_utils_file_ts",
-      "confidence_score": 1.0
+      "target": "nyawit_api_src_utils_file_ts"
     },
     {
       "relation": "imports",
@@ -5629,9 +6146,9 @@
       "source_file": "nyawit-api/src/controllers/detection.controller.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_controllers_detection_controller_ts",
-      "target": "utils_file_savebase64image",
-      "confidence_score": 1.0
+      "target": "utils_file_savebase64image"
     },
     {
       "relation": "contains",
@@ -5740,6 +6257,70 @@
       "target": "controllers_detection_controller_deletedetection"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "nyawit_api_src_controllers_price_controller_ts",
+      "target": "nyawit_api_src_lib_prisma_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_controllers_price_controller_ts",
+      "target": "controllers_price_controller_getseedfordate"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_controllers_price_controller_ts",
+      "target": "controllers_price_controller_gettodayprices"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_routes_price_routes_ts",
+      "target": "nyawit_api_src_controllers_price_controller_ts"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/controllers/price.controller.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "controllers_price_controller_gettodayprices",
+      "target": "controllers_price_controller_getseedfordate"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_routes_price_routes_ts",
+      "target": "controllers_price_controller_gettodayprices"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "nyawit-api/src/lib/jwt.ts",
@@ -5846,6 +6427,17 @@
       "target": "nyawit_api_src_middleware_auth_middleware_ts"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_routes_price_routes_ts",
+      "target": "nyawit_api_src_middleware_auth_middleware_ts"
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -5865,6 +6457,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "nyawit_api_src_routes_detection_routes_ts",
+      "target": "middleware_auth_middleware_authmiddleware"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_routes_price_routes_ts",
       "target": "middleware_auth_middleware_authmiddleware"
     },
     {
@@ -5890,6 +6493,16 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "nyawit-api/src/routes/price.routes.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_api_src_routes_price_routes_ts",
+      "target": "routes_price_routes_router"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "nyawit-api/src/types/express.d.ts",
       "source_location": "L5",
       "weight": 1.0,
@@ -5903,9 +6516,9 @@
       "source_file": "nyawit-api/src/utils/file.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_utils_file_ts",
-      "target": "utils_file_savebase64image",
-      "confidence_score": 1.0
+      "target": "utils_file_savebase64image"
     },
     {
       "relation": "contains",
@@ -6531,6 +7144,126 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ringkasan_md",
+      "target": "nyawit_ringkasan_ringkasan_proyek_nyawit_palm_oil_ai_detection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_ringkasan_proyek_nyawit_palm_oil_ai_detection",
+      "target": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_ringkasan_proyek_nyawit_palm_oil_ai_detection",
+      "target": "nyawit_ringkasan_arsitektur_teknologi_stack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_ringkasan_proyek_nyawit_palm_oil_ai_detection",
+      "target": "nyawit_ringkasan_struktur_berkas_utama_yang_dikembangkan_dimodifikasi"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_ringkasan_proyek_nyawit_palm_oil_ai_detection",
+      "target": "nyawit_ringkasan_perkembangan_struktur_kode_graphify_watch"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan",
+      "target": "nyawit_ringkasan_1_sistem_autentikasi_keamanan_auth_security"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan",
+      "target": "nyawit_ringkasan_2_personalisasi_akun_premium_forest_green_aesthetic"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan",
+      "target": "nyawit_ringkasan_3_sistem_deteksi_ai_berbasis_gambar_image_ai_detection"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan",
+      "target": "nyawit_ringkasan_4_deteksi_real_time_kamera_live_live_camera_detection_fitur_performa_tinggi"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_fitur_utama_yang_telah_diimplementasikan",
+      "target": "nyawit_ringkasan_5_penyimpanan_gambar_hybrid_hybrid_image_storage_fitur_unggulan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L62",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_struktur_berkas_utama_yang_dikembangkan_dimodifikasi",
+      "target": "nyawit_ringkasan_sisi_frontend_flutter_lib"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "RINGKASAN.md",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nyawit_ringkasan_struktur_berkas_utama_yang_dikembangkan_dimodifikasi",
+      "target": "nyawit_ringkasan_sisi_backend_node_js_nyawit_api"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -6766,5 +7499,5 @@
       "source_file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
   ],
-  "built_at_commit": "9eead1c46b76a9c8e99a328a6e9f4fb8dc20a6f9"
+  "built_at_commit": "8984e5d722594e2f5c41bb75009ad21cd095bac6"
 }
