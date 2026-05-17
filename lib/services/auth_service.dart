@@ -66,4 +66,27 @@ class AuthService {
       return null;
     }
   }
+
+  static Future<bool> updateProfile({
+    String? name,
+    String? nickname,
+    String? password,
+    String? photoProfile,
+  }) async {
+    try {
+      final response = await ApiClient.put('/auth/update-profile', {
+        if (name != null) 'name': name,
+        if (nickname != null) 'nickname': nickname,
+        if (password != null) 'password': password,
+        if (photoProfile != null) 'photoProfile': photoProfile,
+      });
+
+      if (response.statusCode == 200) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      return false;
+    }
+  }
 }

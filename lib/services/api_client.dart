@@ -36,6 +36,25 @@ class ApiClient {
     }
   }
 
+  static Future<http.Response> put(String endpoint, Map<String, dynamic> body) async {
+    final headers = await _getHeaders();
+    final url = Uri.parse('$baseUrl$endpoint');
+    
+    print('ApiClient PUT: $url');
+    try {
+      final response = await http.put(
+        url,
+        headers: headers,
+        body: jsonEncode(body),
+      );
+      print('ApiClient Response [${response.statusCode}]: ${response.body}');
+      return response;
+    } catch (e) {
+      print('ApiClient Error: $e');
+      rethrow;
+    }
+  }
+
   static Future<http.Response> get(String endpoint) async {
     final headers = await _getHeaders();
     final url = Uri.parse('$baseUrl$endpoint');

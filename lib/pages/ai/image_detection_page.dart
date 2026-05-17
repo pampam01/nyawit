@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -91,12 +92,22 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
       }
     });
 
+    String? base64Image;
+    if (_image != null) {
+      try {
+        final bytes = await _image!.readAsBytes();
+        base64Image = 'data:image/jpeg;base64,${base64Encode(bytes)}';
+      } catch (e) {
+        print('Error encoding image to base64: $e');
+      }
+    }
+
     final success = await DetectionService.saveDetection(
       total: _detections.length,
       dominantLabel: dominant,
       counts: _summary,
       detections: _detections,
-      imagePath: _image?.path,
+      imagePath: base64Image,
     );
     
     setState(() => _isSaving = false);

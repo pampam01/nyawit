@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'ai/ai_page.dart';
 import 'history_page.dart';
+import 'profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -17,21 +18,25 @@ class _MainPageState extends State<MainPage> {
     const HomePage(),
     const AiPage(),
     const HistoryPage(),
+    const ProfilePage(),
   ];
 
   final List<String> _titles = [
     'Nyawit',
     'Fitur AI',
     'Riwayat',
+    'Akun Saya',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(_titles[_currentIndex]),
-        centerTitle: true,
-      ),
+      appBar: _currentIndex == 3
+          ? null // Sembunyikan default AppBar untuk tab Profil agar layout header kustom lebih bersih
+          : AppBar(
+              title: Text(_titles[_currentIndex]),
+              centerTitle: true,
+            ),
       body: _pages[_currentIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
@@ -56,6 +61,11 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.history_outlined),
             selectedIcon: Icon(Icons.history),
             label: 'Riwayat',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.person_outline_rounded),
+            selectedIcon: Icon(Icons.person),
+            label: 'Akun',
           ),
         ],
       ),

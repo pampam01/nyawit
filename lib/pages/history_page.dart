@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/detection_service.dart';
 import '../models/detection.dart';
+import '../services/api_client.dart';
 import 'package:intl/intl.dart';
 
 class HistoryPage extends StatefulWidget {
@@ -31,34 +32,79 @@ class _HistoryPageState extends State<HistoryPage> {
     }
   }
 
-  Future<void> _deleteHistory(int id) async {
-    final success = await DetectionService.deleteDetection(id);
-    if (success) {
-      _fetchHistory();
+  Future<void> _showDeleteDialog(int id) async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Hapus Riwayat'),
+        content: const Text('Apakah Anda yakin ingin menghapus riwayat deteksi ini secara permanen?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context, false),
+            child: const Text('Batal'),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.pop(context, true),
+            style: FilledButton.styleFrom(
+              backgroundColor: Theme.of(context).colorScheme.error,
+              foregroundColor: Theme.of(context).colorScheme.onError,
+            ),
+            child: const Text('Hapus'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirm == true) {
+      final success = await DetectionService.deleteDetection(id);
+      if (success) {
+        _fetchHistory();
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Riwayat berhasil dihapus')),
+          );
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Gagal menghapus riwayat')),
+          );
+        }
+      }
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 24, 20, 0),
-      child: Column(
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Scaffold(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              Text(
-                'Riwayat Deteksi',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(24, 64, 24, 24),
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [colorScheme.primaryContainer.withOpacity(0.4), colorScheme.surface],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
-              const Spacer(),
-              IconButton.filledTonal(
-                onPressed: _fetchHistory,
-                icon: const Icon(Icons.refresh, size: 20),
-              ),
-            ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Riwayat Deteksi',
+                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  'Daftar hasil analisis tandan buah segar kelapa sawit Anda',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: colorScheme.onSurfaceVariant.withOpacity(0.8)),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 24),
           Expanded(
@@ -77,7 +123,7 @@ class _HistoryPageState extends State<HistoryPage> {
                       )
                     : ListView.builder(
                         itemCount: _history.length,
-                        padding: const EdgeInsets.only(bottom: 24),
+                        padding: const EdgeInsets.symmetric(horizontal: 20).copyWith(bottom: 24),
                         itemBuilder: (context, index) {
                           final item = _history[index];
                           final formattedDate = DateFormat('dd MMM yyyy, HH:mm').format(item.createdAt.toLocal());
@@ -95,15 +141,35 @@ class _HistoryPageState extends State<HistoryPage> {
                                       color: Theme.of(context).colorScheme.primary.withOpacity(0.1),
                                       borderRadius: BorderRadius.circular(16),
                                     ),
-                                    child: Center(
-                                      child: Text(
-                                        item.total.toString(),
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18,
-                                          color: Theme.of(context).colorScheme.primary,
-                                        ),
-                                      ),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(16),
+                                      child: item.imagePath != null
+                                          ? Image.network(
+                                              item.imagePath!.startsWith('http')
+                                                  ? item.imagePath!
+                                                  : '${ApiClient.baseUrl.replaceAll('/api', '')}${item.imagePath}',
+                                              fit: BoxFit.cover,
+                                              errorBuilder: (context, error, stackTrace) => Center(
+                                                child: Text(
+                                                  item.total.toString(),
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                    color: Theme.of(context).colorScheme.primary,
+                                                  ),
+                                                ),
+                                              ),
+                                            )
+                                          : Center(
+                                              child: Text(
+                                                item.total.toString(),
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 18,
+                                                  color: Theme.of(context).colorScheme.primary,
+                                                ),
+                                              ),
+                                            ),
                                     ),
                                   ),
                                   const SizedBox(width: 16),
@@ -133,30 +199,7 @@ class _HistoryPageState extends State<HistoryPage> {
                           );
                         },
                       ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _showDeleteDialog(int id) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Hapus Riwayat?'),
-        content: const Text('Tindakan ini tidak dapat dibatalkan.'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Batal'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              _deleteHistory(id);
-            },
-            child: const Text('Hapus', style: TextStyle(color: Colors.red)),
-          ),
+          ),  
         ],
       ),
     );

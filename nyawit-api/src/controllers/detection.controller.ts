@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import prisma from '../lib/prisma';
 import { createDetectionSchema } from '../validators/detection.validator';
+import { saveBase64Image } from '../utils/file';
 
 export const createDetection = async (req: Request, res: Response) => {
   try {
@@ -11,6 +12,11 @@ export const createDetection = async (req: Request, res: Response) => {
 
     const data = createDetectionSchema.parse(req.body);
 
+    let savedImagePath = data.imagePath ?? null;
+    if (savedImagePath && !savedImagePath.startsWith('/uploads')) {
+      savedImagePath = saveBase64Image(savedImagePath, 'detection');
+    }
+
     const detection = await prisma.detection.create({
       data: {
         userId,
@@ -18,7 +24,7 @@ export const createDetection = async (req: Request, res: Response) => {
         dominantLabel: data.dominantLabel,
         counts: data.counts,
         detections: data.detections ?? undefined,
-        imagePath: data.imagePath ?? null,
+        imagePath: savedImagePath,
       },
     });
 
