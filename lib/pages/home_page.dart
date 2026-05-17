@@ -17,15 +17,28 @@ class _HomePageState extends State<HomePage> {
   bool _isLoadingPrice = true;
   bool _showRegionalPrices = false;
 
+  // Daftar wilayah resmi yang terdaftar di API SPKS Indonesia
+  final List<Map<String, String>> _provinces = [
+    {'name': 'Jambi', 'slug': 'jambi'},
+    {'name': 'Riau', 'slug': 'riau'},
+    {'name': 'Aceh', 'slug': 'aceh'},
+    {'name': 'Sumatera Utara', 'slug': 'sumatera-utara'},
+    {'name': 'Sumatera Selatan', 'slug': 'sumatera-selatan'},
+    {'name': 'Kalimantan Barat', 'slug': 'kalimantan-barat'},
+    {'name': 'Kalimantan Timur', 'slug': 'kalimantan-timur'},
+  ];
+  
+  String _selectedProvinceSlug = 'jambi';
+
   @override
   void initState() {
     super.initState();
-    _fetchTodayPrices();
+    _fetchTodayPrices(_selectedProvinceSlug);
   }
 
-  Future<void> _fetchTodayPrices() async {
+  Future<void> _fetchTodayPrices(String provinceSlug) async {
     setState(() => _isLoadingPrice = true);
-    final data = await PriceService.getTodayPrices();
+    final data = await PriceService.getTodayPrices(province: provinceSlug);
     if (mounted) {
       setState(() {
         _priceData = data;
@@ -38,140 +51,202 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
 
-    return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // 1. Welcome Card dengan Avatar Dinamis
-          FutureBuilder<Map<String, dynamic>?>(
-              future: AuthService.getMe(),
-              builder: (context, snapshot) {
-                final user = snapshot.data;
-                final name = user?['name'] ?? 'User';
-                final email = user?['email'] ?? 'user@nyawit.com';
-                final photo = user?['photoProfile'];
-
-                return Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [colorScheme.primary, colorScheme.primary.withOpacity(0.85)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
-                    borderRadius: BorderRadius.circular(28),
-                    boxShadow: [
-                      BoxShadow(
-                        color: colorScheme.primary.withOpacity(0.25),
-                        blurRadius: 16,
-                        offset: const Offset(0, 8),
+    return RefreshIndicator(
+      onRefresh: () => _fetchTodayPrices(_selectedProvinceSlug),
+      child: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // 1. Welcome Card dengan Avatar Dinamis
+            FutureBuilder<Map<String, dynamic>?>(
+                future: AuthService.getMe(),
+                builder: (context, snapshot) {
+                  final user = snapshot.data;
+                  final name = user?['name'] ?? 'User';
+                  final email = user?['email'] ?? 'user@nyawit.com';
+                  final photo = user?['photoProfile'];
+    
+                  return Container(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [colorScheme.primary, colorScheme.primary.withOpacity(0.85)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
                       ),
-                    ],
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
-                    child: Row(
-                      children: [
-                        _buildAvatarWidget(photo, name, 72),
-                        const SizedBox(width: 20),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Selamat Datang,',
-                                style: TextStyle(
-                                  color: Colors.white.withOpacity(0.8),
-                                  fontSize: 14,
-                                ),
-                              ),
-                              const SizedBox(height: 2),
-                              Text(
-                                name,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 22,
-                                  color: Colors.white,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                email,
-                                style: TextStyle(
-                                  color: Colors.white.withOpacity(0.9),
-                                  fontSize: 13,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ],
-                          ),
+                      borderRadius: BorderRadius.circular(28),
+                      boxShadow: [
+                        BoxShadow(
+                          color: colorScheme.primary.withOpacity(0.25),
+                          blurRadius: 16,
+                          offset: const Offset(0, 8),
                         ),
                       ],
                     ),
-                  ),
-                );
-              }),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
+                      child: Row(
+                        children: [
+                          _buildAvatarWidget(photo, name, 72),
+                          const SizedBox(width: 20),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Selamat Datang,',
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.8),
+                                    fontSize: 14,
+                                  ),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 22,
+                                    color: Colors.white,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  email,
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontSize: 13,
+                                  ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+    
+            const SizedBox(height: 28),
 
-          const SizedBox(height: 28),
-
-          // 2. Premium Price Card (Harga Sawit Hari Ini)
-          _buildTodayPriceCard(colorScheme),
-
-          const SizedBox(height: 32),
-
-          // 3. Fitur Utama
-          Text(
-            'Fitur Utama',
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 0.5,
+            // 2. Bar Selector Provinsi (Chips Horizontal) yang Premium
+            Row(
+              children: [
+                Icon(Icons.location_on_rounded, color: colorScheme.primary, size: 20),
+                const SizedBox(width: 6),
+                Text(
+                  'Pilih Wilayah Pantauan:',
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade700,
+                      ),
                 ),
-          ),
-          const SizedBox(height: 16),
-          Row(
-            children: [
-              Expanded(
-                child: _buildFeatureCard(
-                  context,
-                  icon: Icons.image_search_rounded,
-                  title: 'Deteksi Gambar',
-                  colorScheme: colorScheme,
-                ),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: _buildFeatureCard(
-                  context,
-                  icon: Icons.videocam_rounded,
-                  title: 'Deteksi Live',
-                  colorScheme: colorScheme,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 32),
-          TextButton.icon(
-            onPressed: () async {
-              await AuthService.logout();
-              if (context.mounted) {
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                  (route) => false,
-                );
-              }
-            },
-            icon: const Icon(Icons.logout),
-            label: const Text('Keluar dari Akun'),
-            style: TextButton.styleFrom(
-              foregroundColor: colorScheme.error,
-              padding: const EdgeInsets.symmetric(vertical: 16),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              child: Row(
+                children: _provinces.map((prov) {
+                  final isSelected = prov['slug'] == _selectedProvinceSlug;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: ChoiceChip(
+                      label: Text(
+                        prov['name']!,
+                        style: TextStyle(
+                          color: isSelected ? Colors.white : Colors.black87,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.5,
+                        ),
+                      ),
+                      selected: isSelected,
+                      selectedColor: colorScheme.primary,
+                      backgroundColor: colorScheme.primary.withOpacity(0.06),
+                      checkmarkColor: Colors.white,
+                      onSelected: (selected) {
+                        if (selected) {
+                          setState(() {
+                            _selectedProvinceSlug = prov['slug']!;
+                          });
+                          _fetchTodayPrices(prov['slug']!);
+                        }
+                      },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(
+                          color: isSelected ? Colors.transparent : colorScheme.outlineVariant.withOpacity(0.5),
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
+
+            const SizedBox(height: 16),
+    
+            // 3. Premium Price Card (Harga Sawit Hari Ini)
+            _buildTodayPriceCard(colorScheme),
+    
+            const SizedBox(height: 32),
+    
+            // 4. Fitur Utama
+            Text(
+              'Fitur Utama',
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.5,
+                  ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: _buildFeatureCard(
+                    context,
+                    icon: Icons.image_search_rounded,
+                    title: 'Deteksi Gambar',
+                    colorScheme: colorScheme,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: _buildFeatureCard(
+                    context,
+                    icon: Icons.videocam_rounded,
+                    title: 'Deteksi Live',
+                    colorScheme: colorScheme,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 32),
+            TextButton.icon(
+              onPressed: () async {
+                await AuthService.logout();
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                    (route) => false,
+                  );
+                }
+              },
+              icon: const Icon(Icons.logout),
+              label: const Text('Keluar dari Akun'),
+              style: TextButton.styleFrom(
+                foregroundColor: colorScheme.error,
+                padding: const EdgeInsets.symmetric(vertical: 16),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -179,15 +254,19 @@ class _HomePageState extends State<HomePage> {
   Widget _buildTodayPriceCard(ColorScheme colorScheme) {
     if (_isLoadingPrice) {
       return Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        elevation: 0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(24),
+          side: BorderSide(color: colorScheme.outlineVariant.withOpacity(0.3)),
+        ),
         child: const Padding(
-          padding: EdgeInsets.symmetric(vertical: 40.0),
+          padding: EdgeInsets.symmetric(vertical: 64.0),
           child: Center(
             child: Column(
               children: [
                 CircularProgressIndicator(),
                 SizedBox(height: 16),
-                Text('Memuat harga sawit hari ini...', style: TextStyle(color: Colors.grey)),
+                Text('Memanggil API SPKS Live...', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500)),
               ],
             ),
           ),
@@ -207,7 +286,7 @@ class _HomePageState extends State<HomePage> {
               const Text('Gagal memuat harga sawit harian.', style: TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
               OutlinedButton.icon(
-                onPressed: _fetchTodayPrices,
+                onPressed: () => _fetchTodayPrices(_selectedProvinceSlug),
                 icon: const Icon(Icons.refresh),
                 label: const Text('Coba Lagi'),
               ),
@@ -238,7 +317,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'Harga TBS Sawit Nasional',
+                    'Harga TBS ${data.provinceName} Live',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
@@ -352,7 +431,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Lihat Rincian Wilayah & Umur',
+                      'Lihat Rincian Umur & Wilayah',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13.5,
@@ -371,14 +450,14 @@ class _HomePageState extends State<HomePage> {
             if (_showRegionalPrices) ...[
               const SizedBox(height: 12),
               const Text(
-                'Berdasarkan Umur Pohon:',
+                'Berdasarkan Umur Pohon (SPKS Resmi):',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey),
               ),
               const SizedBox(height: 6),
               ...data.byAge.entries.map((e) => _buildPriceRow(e.key, e.value)),
               const Divider(height: 24),
               const Text(
-                'Berdasarkan Daerah (Benchmark):',
+                'Perbandingan Daerah Lain (Benchmark):',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Colors.grey),
               ),
               const SizedBox(height: 6),

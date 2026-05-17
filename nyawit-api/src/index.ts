@@ -5,6 +5,7 @@ import path from 'path';
 import authRoutes from './routes/auth.routes';
 import detectionRoutes from './routes/detection.routes';
 import priceRoutes from './routes/price.routes';
+import scraperRoutes from './routes/scraper.routes';
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/detections', detectionRoutes);
 app.use('/api/prices', priceRoutes);
+app.use('/api/harga-sawit-live', scraperRoutes);
 
 // Error handling middleware (catch-all for unhandled errors)
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {

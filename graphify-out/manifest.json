@@ -60,8 +60,8 @@
     "hash": "c51eb85d2107b054afeb204fc878f2f5"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\home_page.dart": {
-    "mtime": 1779023805.6556456,
-    "hash": "6d4207270dc120f2f3764d568d52cb35"
+    "mtime": 1779026768.385805,
+    "hash": "5627747ff3b39bad73b49f3542558ecb"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\main_page.dart": {
     "mtime": 1779021737.251621,
@@ -76,8 +76,8 @@
     "hash": "f2076b10aece9fde998eedeecc07a81d"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\image_detection_page.dart": {
-    "mtime": 1779022797.207937,
-    "hash": "29fca71181c428211e273ba287dae294"
+    "mtime": 1779027588.9881153,
+    "hash": "eafa0e3a91710e70af2048197c73a07e"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\live_detection_page.dart": {
     "mtime": 1778685303.3606155,
@@ -108,8 +108,8 @@
     "hash": "ea8cf3e831ba4dc923bceeffc31db46d"
   },
   "D:\\usaha\\nyawit\\lib\\services\\price_service.dart": {
-    "mtime": 1779023666.8017461,
-    "hash": "6271723fdc31f58eca8203060d3e776e"
+    "mtime": 1779026756.9369519,
+    "hash": "424e58a35a729c8d01dbd8b487a8a4d9"
   },
   "D:\\usaha\\nyawit\\lib\\utils\\box_painter.dart": {
     "mtime": 1778685284.4990344,
@@ -156,8 +156,8 @@
     "hash": "e575537b13d3534c4ea97f521fa9ecd4"
   },
   "D:\\usaha\\nyawit\\nyawit-api\\src\\index.ts": {
-    "mtime": 1779023660.214223,
-    "hash": "19bbc99e53448883b0662e1c2f6a8da5"
+    "mtime": 1779025301.634863,
+    "hash": "f541fe7c49ae518b599276229591a621"
   },
   "D:\\usaha\\nyawit\\nyawit-api\\src\\controllers\\auth.controller.ts": {
     "mtime": 1779022582.1075456,
@@ -168,8 +168,12 @@
     "hash": "eb374cb78a233c8c23988417edb48a47"
   },
   "D:\\usaha\\nyawit\\nyawit-api\\src\\controllers\\price.controller.ts": {
-    "mtime": 1779023959.6893327,
-    "hash": "a14c6a12ab6cc7634ce97dd5838e86ea"
+    "mtime": 1779026968.309872,
+    "hash": "e029472e060b5a3ef5f30ffb942acccb"
+  },
+  "D:\\usaha\\nyawit\\nyawit-api\\src\\controllers\\scraper.controller.ts": {
+    "mtime": 1779026398.6539795,
+    "hash": "735869d338d2537eeef1289a4621137d"
   },
   "D:\\usaha\\nyawit\\nyawit-api\\src\\lib\\jwt.ts": {
     "mtime": 1778687566.2633672,
@@ -194,6 +198,10 @@
   "D:\\usaha\\nyawit\\nyawit-api\\src\\routes\\price.routes.ts": {
     "mtime": 1779023653.4974444,
     "hash": "b111ef1dd3c3a5e3fc457fd70a4bd684"
+  },
+  "D:\\usaha\\nyawit\\nyawit-api\\src\\routes\\scraper.routes.ts": {
+    "mtime": 1779026403.1028588,
+    "hash": "5365ff1e40a36329840a4fdbc25323ec"
   },
   "D:\\usaha\\nyawit\\nyawit-api\\src\\types\\express.d.ts": {
     "mtime": 1778687137.1772544,

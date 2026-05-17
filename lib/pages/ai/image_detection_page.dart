@@ -201,9 +201,9 @@ class _ImageDetectionPageState extends State<ImageDetectionPage> {
             const SizedBox(height: 12),
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: colorScheme.surface,
                 borderRadius: BorderRadius.circular(24),
-                border: Border.all(color: Colors.green.withOpacity(0.1)),
+                border: Border.all(color: colorScheme.outlineVariant.withOpacity(0.5)),
               ),
               padding: const EdgeInsets.all(20.0),
               child: Column(
