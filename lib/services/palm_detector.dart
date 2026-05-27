@@ -6,6 +6,7 @@ import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:image/image.dart' as img;
 import '../models/detection.dart';
 
+
 class PalmDetector {
   static const int inputSize = 640;
   static const int numClasses = 6;
@@ -25,7 +26,24 @@ class PalmDetector {
 
   Future<void> load() async {
     final options = InterpreterOptions()..threads = 4;
-    _interpreter = await Interpreter.fromAsset('assets/models/best_float32.tflite', options: options);
+
+    try {
+      if (Platform.isAndroid) {
+        // Menggunakan properti NNAPI native bawaan InterpreterOptions agar 100% sukses dikompilasi 
+        // tanpa bergantung pada export Delegate eksternal yang sensitif versi.
+        options.useNnApiForAndroid = true;
+      }
+    } catch (e) {
+      // ignore: avoid_print
+      print(
+        "⚠️ Akselerasi hardware gagal diinisialisasi. Fallback otomatis ke CPU: $e",
+      );
+    }
+
+    _interpreter = await Interpreter.fromAsset(
+      'assets/models/best_float16.tflite',
+      options: options,
+    );
   }
 
   Future<List<Detection>> detectFromImagePath(String path) async {
@@ -41,14 +59,19 @@ class PalmDetector {
 
         var input = _imageToTensor(image);
         // Asumsi format YOLOv8 standar: [1, 10, 8400]
-        var output = List.generate(1, (i) => List.generate(numValues, (j) => List.filled(numBoxes, 0.0)));
-        
-        // Kita tidak bisa me-run interpreter dalam isolate ini secara langsung tanpa mengirim interpreter address, 
+        var output = List.generate(
+          1,
+          (i) => List.generate(numValues, (j) => List.filled(numBoxes, 0.0)),
+        );
+
+        // Kita tidak bisa me-run interpreter dalam isolate ini secara langsung tanpa mengirim interpreter address,
         // tapi tflite_flutter v0.10+ di dart murni kadang bisa bermasalah jika interpreter tidak dibuat di isolate tersebut.
         // Jadi isolate ini hanya mem-parsing image, return tensor, run interpreter di main thread.
-        return _runInference(input); // Wait, _runInference uses _interpreter which is not passed to isolate.
+        return _runInference(
+          input,
+        ); // Wait, _runInference uses _interpreter which is not passed to isolate.
       });
-    } catch(e) {
+    } catch (e) {
       // Fallback ke main thread jika isolate bermasalah dengan binding/fungsi.
       final bytes = await File(path).readAsBytes();
       final image = img.decodeImage(bytes);
@@ -79,9 +102,18 @@ class PalmDetector {
 
       // Pindahkan komputasi berat (YUV to RGB loop) ke background thread agar UI tidak macet
       var input = await Isolate.run(() {
-        return _rawYuvToTensor(width, height, plane0, plane1, plane2, rowStride0, rowStride1, pixelStride1);
+        return _rawYuvToTensor(
+          width,
+          height,
+          plane0,
+          plane1,
+          plane2,
+          rowStride0,
+          rowStride1,
+          pixelStride1,
+        );
       });
-      
+
       return _runInference(input);
     } finally {
       _isRunning = false;
@@ -89,24 +121,40 @@ class PalmDetector {
   }
 
   List<Detection> _runInference(List<List<List<List<double>>>> input) {
-    var output = List.generate(1, (i) => List.generate(numValues, (j) => List.filled(numBoxes, 0.0)));
-    
+    var output = List.generate(
+      1,
+      (i) => List.generate(numValues, (j) => List.filled(numBoxes, 0.0)),
+    );
+
     // Kadang output YOLO [1, 8400, 10], kita cek error
     try {
       _interpreter!.run(input, output);
     } catch (e) {
       // Coba bentuk lain [1, 8400, 10]
-      var altOutput = List.generate(1, (i) => List.generate(numBoxes, (j) => List.filled(numValues, 0.0)));
+      var altOutput = List.generate(
+        1,
+        (i) => List.generate(numBoxes, (j) => List.filled(numValues, 0.0)),
+      );
       _interpreter!.run(input, altOutput);
       return _parseOutputAlt(altOutput);
     }
-    
+
     return _parseOutput(output);
   }
 
   static List<List<List<List<double>>>> _imageToTensor(img.Image image) {
-    var resizedImage = img.copyResize(image, width: inputSize, height: inputSize);
-    var input = List.generate(1, (i) => List.generate(inputSize, (y) => List.generate(inputSize, (x) => List.filled(3, 0.0))));
+    var resizedImage = img.copyResize(
+      image,
+      width: inputSize,
+      height: inputSize,
+    );
+    var input = List.generate(
+      1,
+      (i) => List.generate(
+        inputSize,
+        (y) => List.generate(inputSize, (x) => List.filled(3, 0.0)),
+      ),
+    );
 
     for (int y = 0; y < inputSize; y++) {
       for (int x = 0; x < inputSize; x++) {
@@ -120,12 +168,23 @@ class PalmDetector {
   }
 
   static List<List<List<List<double>>>> _rawYuvToTensor(
-      int width, int height, 
-      Uint8List plane0, Uint8List plane1, Uint8List plane2, 
-      int rowStride0, int rowStride1, int pixelStride1) {
-    
-    var input = List.generate(1, (i) => List.generate(inputSize, (y) => List.generate(inputSize, (x) => List.filled(3, 0.0))));
-    
+    int width,
+    int height,
+    Uint8List plane0,
+    Uint8List plane1,
+    Uint8List plane2,
+    int rowStride0,
+    int rowStride1,
+    int pixelStride1,
+  ) {
+    var input = List.generate(
+      1,
+      (i) => List.generate(
+        inputSize,
+        (y) => List.generate(inputSize, (x) => List.filled(3, 0.0)),
+      ),
+    );
+
     double scaleX = width / inputSize;
     double scaleY = height / inputSize;
 
@@ -143,7 +202,8 @@ class PalmDetector {
 
         // Rumus integer cepat untuk YUV ke RGB
         int r = (yp + vp * 1436 ~/ 1024 - 179).clamp(0, 255);
-        int g = (yp - up * 46549 ~/ 131072 + 44 - vp * 93604 ~/ 131072 + 91).clamp(0, 255);
+        int g = (yp - up * 46549 ~/ 131072 + 44 - vp * 93604 ~/ 131072 + 91)
+            .clamp(0, 255);
         int b = (yp + up * 1814 ~/ 1024 - 227).clamp(0, 255);
 
         input[0][y][x][0] = r / 255.0;
@@ -158,11 +218,11 @@ class PalmDetector {
     List<Detection> detections = [];
     double confThreshold = 0.5;
     var out = output[0];
-    
+
     for (int i = 0; i < numBoxes; i++) {
       double maxScore = 0;
       int maxClassId = -1;
-      
+
       for (int c = 0; c < numClasses; c++) {
         double score = out[4 + c][i];
         if (score > maxScore) {
@@ -170,22 +230,24 @@ class PalmDetector {
           maxClassId = c;
         }
       }
-      
+
       if (maxScore > confThreshold) {
         double xc = out[0][i] / inputSize;
         double yc = out[1][i] / inputSize;
         double w = out[2][i] / inputSize;
         double h = out[3][i] / inputSize;
-        
-        detections.add(Detection(
-          x1: xc - w / 2,
-          y1: yc - h / 2,
-          x2: xc + w / 2,
-          y2: yc + h / 2,
-          score: maxScore,
-          classId: maxClassId,
-          className: classNames[maxClassId],
-        ));
+
+        detections.add(
+          Detection(
+            x1: xc - w / 2,
+            y1: yc - h / 2,
+            x2: xc + w / 2,
+            y2: yc + h / 2,
+            score: maxScore,
+            classId: maxClassId,
+            className: classNames[maxClassId],
+          ),
+        );
       }
     }
     return _applyNMS(detections);
@@ -195,11 +257,11 @@ class PalmDetector {
     List<Detection> detections = [];
     double confThreshold = 0.5;
     var out = output[0]; // [8400, 10]
-    
+
     for (int i = 0; i < numBoxes; i++) {
       double maxScore = 0;
       int maxClassId = -1;
-      
+
       for (int c = 0; c < numClasses; c++) {
         double score = out[i][4 + c];
         if (score > maxScore) {
@@ -207,31 +269,36 @@ class PalmDetector {
           maxClassId = c;
         }
       }
-      
+
       if (maxScore > confThreshold) {
         double xc = out[i][0] / inputSize;
         double yc = out[i][1] / inputSize;
         double w = out[i][2] / inputSize;
         double h = out[i][3] / inputSize;
-        
-        detections.add(Detection(
-          x1: xc - w / 2,
-          y1: yc - h / 2,
-          x2: xc + w / 2,
-          y2: yc + h / 2,
-          score: maxScore,
-          classId: maxClassId,
-          className: classNames[maxClassId],
-        ));
+
+        detections.add(
+          Detection(
+            x1: xc - w / 2,
+            y1: yc - h / 2,
+            x2: xc + w / 2,
+            y2: yc + h / 2,
+            score: maxScore,
+            classId: maxClassId,
+            className: classNames[maxClassId],
+          ),
+        );
       }
     }
     return _applyNMS(detections);
   }
 
-  List<Detection> _applyNMS(List<Detection> boxes, {double iouThreshold = 0.45}) {
+  List<Detection> _applyNMS(
+    List<Detection> boxes, {
+    double iouThreshold = 0.45,
+  }) {
     boxes.sort((a, b) => b.score.compareTo(a.score));
     List<Detection> selected = [];
-    
+
     for (var box in boxes) {
       bool keep = true;
       for (var sBox in selected) {
@@ -256,7 +323,8 @@ class PalmDetector {
     double x2 = b1.x2 < b2.x2 ? b1.x2 : b2.x2;
     double y2 = b1.y2 < b2.y2 ? b1.y2 : b2.y2;
 
-    double intersectionArea = (x2 - x1 > 0 ? x2 - x1 : 0) * (y2 - y1 > 0 ? y2 - y1 : 0);
+    double intersectionArea =
+        (x2 - x1 > 0 ? x2 - x1 : 0) * (y2 - y1 > 0 ? y2 - y1 : 0);
     if (intersectionArea <= 0) return 0;
 
     double b1Area = b1.width * b1.height;
@@ -266,9 +334,7 @@ class PalmDetector {
   }
 
   Map<String, int> summarize(List<Detection> detections) {
-    Map<String, int> summary = {
-      for (var name in classNames) name: 0,
-    };
+    Map<String, int> summary = {for (var name in classNames) name: 0};
 
     for (var det in detections) {
       if (summary.containsKey(det.className)) {

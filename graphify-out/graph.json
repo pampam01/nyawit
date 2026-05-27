@@ -282,7 +282,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "lib_main_dart",
-      "community": 42,
+      "community": 0,
       "norm_label": "main.dart"
     },
     {
@@ -291,7 +291,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_myapp",
-      "community": 42,
+      "community": 0,
       "norm_label": "myapp"
     },
     {
@@ -300,7 +300,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_main",
-      "community": 42,
+      "community": 0,
       "norm_label": "main"
     },
     {
@@ -309,7 +309,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_build",
-      "community": 42,
+      "community": 0,
       "norm_label": "build"
     },
     {
@@ -318,7 +318,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_materialapp",
-      "community": 42,
+      "community": 0,
       "norm_label": "materialapp"
     },
     {
@@ -327,7 +327,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_scaffold",
-      "community": 42,
+      "community": 0,
       "norm_label": "scaffold"
     },
     {
@@ -336,7 +336,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_mainpage",
-      "community": 42,
+      "community": 0,
       "norm_label": "mainpage"
     },
     {
@@ -345,7 +345,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_main_dart_loginpage",
-      "community": 42,
+      "community": 0,
       "norm_label": "loginpage"
     },
     {
@@ -354,7 +354,7 @@
       "source_file": "test/widget_test.dart",
       "source_location": null,
       "id": "package_flutter_material_dart",
-      "community": 11,
+      "community": 0,
       "norm_label": "package:flutter/material.dart"
     },
     {
@@ -363,7 +363,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "package_nyawit_pages_main_page_dart",
-      "community": 42,
+      "community": 0,
       "norm_label": "package:nyawit/pages/main_page.dart"
     },
     {
@@ -372,7 +372,7 @@
       "source_file": "lib/main.dart",
       "source_location": null,
       "id": "pages_auth_login_page_dart",
-      "community": 42,
+      "community": 0,
       "norm_label": "pages/auth/login_page.dart"
     },
     {
@@ -723,17 +723,17 @@
       "source_file": "lib/services/price_service.dart",
       "source_location": null,
       "id": "dart_convert",
-      "community": 37,
+      "community": 40,
       "norm_label": "dart:convert"
     },
     {
-      "label": "../services/price_service.dart",
+      "label": "../../services/price_service.dart",
       "file_type": "code",
-      "source_file": "lib/pages/home_page.dart",
+      "source_file": "lib/pages/ai/calculator_page.dart",
       "source_location": null,
       "id": "services_price_service_dart",
       "community": 17,
-      "norm_label": "../services/price_service.dart"
+      "norm_label": "../../services/price_service.dart"
     },
     {
       "label": "auth/login_page.dart",
@@ -1168,6 +1168,123 @@
       "norm_label": "live_detection_page.dart"
     },
     {
+      "label": "calculator_page.dart",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/ai_page.dart",
+      "source_location": null,
+      "id": "calculator_page_dart",
+      "community": 11,
+      "norm_label": "calculator_page.dart"
+    },
+    {
+      "label": "calculator_page.dart",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "lib_pages_ai_calculator_page_dart",
+      "community": 17,
+      "norm_label": "calculator_page.dart"
+    },
+    {
+      "label": "CalculatorPage",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_calculatorpage",
+      "community": 17,
+      "norm_label": "calculatorpage"
+    },
+    {
+      "label": "_CalculatorPageState",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_calculatorpagestate",
+      "community": 17,
+      "norm_label": "_calculatorpagestate"
+    },
+    {
+      "label": "initState",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_initstate",
+      "community": 17,
+      "norm_label": "initstate"
+    },
+    {
+      "label": "_calculate",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_calculate",
+      "community": 17,
+      "norm_label": "_calculate"
+    },
+    {
+      "label": "dispose",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_dispose",
+      "community": 17,
+      "norm_label": "dispose"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_build",
+      "community": 17,
+      "norm_label": "build"
+    },
+    {
+      "label": "Scaffold",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_scaffold",
+      "community": 17,
+      "norm_label": "scaffold"
+    },
+    {
+      "label": "Icon",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_icon",
+      "community": 17,
+      "norm_label": "icon"
+    },
+    {
+      "label": "SizedBox",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_sizedbox",
+      "community": 17,
+      "norm_label": "sizedbox"
+    },
+    {
+      "label": "Text",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_text",
+      "community": 17,
+      "norm_label": "text"
+    },
+    {
+      "label": "DropdownMenuItem",
+      "file_type": "code",
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "id": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_dropdownmenuitem",
+      "community": 17,
+      "norm_label": "dropdownmenuitem"
+    },
+    {
       "label": "image_detection_page.dart",
       "file_type": "code",
       "source_file": "lib/pages/ai/image_detection_page.dart",
@@ -1317,7 +1434,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "utils_box_painter_dart",
-      "community": 41,
+      "community": 1,
       "norm_label": "../../utils/box_painter.dart"
     },
     {
@@ -1326,7 +1443,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "lib_pages_ai_live_detection_page_dart",
-      "community": 41,
+      "community": 1,
       "norm_label": "live_detection_page.dart"
     },
     {
@@ -1335,7 +1452,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_livedetectionpage",
-      "community": 41,
+      "community": 1,
       "norm_label": "livedetectionpage"
     },
     {
@@ -1344,7 +1461,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_livedetectionpagestate",
-      "community": 41,
+      "community": 1,
       "norm_label": "_livedetectionpagestate"
     },
     {
@@ -1353,7 +1470,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_resultrow",
-      "community": 41,
+      "community": 1,
       "norm_label": "_resultrow"
     },
     {
@@ -1362,7 +1479,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_initstate",
-      "community": 41,
+      "community": 1,
       "norm_label": "initstate"
     },
     {
@@ -1371,7 +1488,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_dispose",
-      "community": 41,
+      "community": 1,
       "norm_label": "dispose"
     },
     {
@@ -1380,7 +1497,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_togglelive",
-      "community": 41,
+      "community": 1,
       "norm_label": "_togglelive"
     },
     {
@@ -1389,7 +1506,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_startlive",
-      "community": 41,
+      "community": 1,
       "norm_label": "_startlive"
     },
     {
@@ -1398,7 +1515,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_exception",
-      "community": 41,
+      "community": 1,
       "norm_label": "exception"
     },
     {
@@ -1407,7 +1524,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_stoplive",
-      "community": 41,
+      "community": 1,
       "norm_label": "_stoplive"
     },
     {
@@ -1416,7 +1533,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_build",
-      "community": 41,
+      "community": 1,
       "norm_label": "build"
     },
     {
@@ -1425,7 +1542,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_scaffold",
-      "community": 41,
+      "community": 1,
       "norm_label": "scaffold"
     },
     {
@@ -1434,7 +1551,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_sizedbox",
-      "community": 41,
+      "community": 1,
       "norm_label": "sizedbox"
     },
     {
@@ -1443,7 +1560,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_divider",
-      "community": 41,
+      "community": 1,
       "norm_label": "divider"
     },
     {
@@ -1452,7 +1569,7 @@
       "source_file": "lib/pages/ai/live_detection_page.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_pages_ai_live_detection_page_dart_padding",
-      "community": 41,
+      "community": 1,
       "norm_label": "padding"
     },
     {
@@ -1632,7 +1749,7 @@
       "source_file": "lib/services/api_client.dart",
       "source_location": null,
       "id": "lib_services_api_client_dart",
-      "community": 37,
+      "community": 40,
       "norm_label": "api_client.dart"
     },
     {
@@ -1641,7 +1758,7 @@
       "source_file": "lib/services/api_client.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_api_client_dart_apiclient",
-      "community": 37,
+      "community": 40,
       "norm_label": "apiclient"
     },
     {
@@ -1650,7 +1767,7 @@
       "source_file": "lib/services/api_client.dart",
       "source_location": null,
       "id": "package_http_http_dart",
-      "community": 37,
+      "community": 40,
       "norm_label": "package:http/http.dart"
     },
     {
@@ -1659,7 +1776,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "package_shared_preferences_shared_preferences_dart",
-      "community": 37,
+      "community": 40,
       "norm_label": "package:shared_preferences/shared_preferences.dart"
     },
     {
@@ -1668,7 +1785,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "lib_services_auth_service_dart",
-      "community": 37,
+      "community": 40,
       "norm_label": "auth_service.dart"
     },
     {
@@ -1677,7 +1794,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_auth_service_dart_authservice",
-      "community": 37,
+      "community": 40,
       "norm_label": "authservice"
     },
     {
@@ -1686,7 +1803,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_auth_service_dart_savetoken",
-      "community": 37,
+      "community": 40,
       "norm_label": "_savetoken"
     },
     {
@@ -1695,7 +1812,7 @@
       "source_file": "lib/services/auth_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_auth_service_dart_jsondecode",
-      "community": 37,
+      "community": 40,
       "norm_label": "jsondecode"
     },
     {
@@ -1704,7 +1821,7 @@
       "source_file": "lib/services/price_service.dart",
       "source_location": null,
       "id": "api_client_dart",
-      "community": 37,
+      "community": 40,
       "norm_label": "api_client.dart"
     },
     {
@@ -1848,7 +1965,7 @@
       "source_file": "lib/services/price_service.dart",
       "source_location": null,
       "id": "lib_services_price_service_dart",
-      "community": 37,
+      "community": 40,
       "norm_label": "price_service.dart"
     },
     {
@@ -1857,7 +1974,7 @@
       "source_file": "lib/services/price_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_price_service_dart_palmpricedata",
-      "community": 37,
+      "community": 40,
       "norm_label": "palmpricedata"
     },
     {
@@ -1866,7 +1983,7 @@
       "source_file": "lib/services/price_service.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_services_price_service_dart_priceservice",
-      "community": 37,
+      "community": 40,
       "norm_label": "priceservice"
     },
     {
@@ -1875,7 +1992,7 @@
       "source_file": "lib/utils/box_painter.dart",
       "source_location": null,
       "id": "lib_utils_box_painter_dart",
-      "community": 11,
+      "community": 40,
       "norm_label": "box_painter.dart"
     },
     {
@@ -1884,7 +2001,7 @@
       "source_file": "lib/utils/box_painter.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_utils_box_painter_dart_detectionboxpainter",
-      "community": 11,
+      "community": 40,
       "norm_label": "detectionboxpainter"
     },
     {
@@ -1893,7 +2010,7 @@
       "source_file": "lib/utils/box_painter.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_utils_box_painter_dart_paint",
-      "community": 11,
+      "community": 40,
       "norm_label": "paint"
     },
     {
@@ -1902,7 +2019,7 @@
       "source_file": "lib/utils/box_painter.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_utils_box_painter_dart_getcolorforclass",
-      "community": 11,
+      "community": 40,
       "norm_label": "_getcolorforclass"
     },
     {
@@ -1911,7 +2028,7 @@
       "source_file": "lib/utils/box_painter.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_lib_utils_box_painter_dart_shouldrepaint",
-      "community": 11,
+      "community": 40,
       "norm_label": "shouldrepaint"
     },
     {
@@ -2145,7 +2262,7 @@
       "source_file": "nyawit-api/src/index.ts",
       "source_location": "L1",
       "id": "nyawit_api_src_index_ts",
-      "community": 2,
+      "community": 8,
       "norm_label": "index.ts"
     },
     {
@@ -2154,7 +2271,7 @@
       "source_file": "nyawit-api/src/index.ts",
       "source_location": "L12",
       "id": "src_index_app",
-      "community": 2,
+      "community": 8,
       "norm_label": "app"
     },
     {
@@ -2253,7 +2370,7 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L1",
       "id": "nyawit_api_src_controllers_price_controller_ts",
-      "community": 2,
+      "community": 8,
       "norm_label": "price.controller.ts"
     },
     {
@@ -2262,7 +2379,7 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L8",
       "id": "controllers_price_controller_cacheentry",
-      "community": 2,
+      "community": 8,
       "norm_label": "cacheentry"
     },
     {
@@ -2271,7 +2388,7 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L14",
       "id": "controllers_price_controller_pricecache",
-      "community": 2,
+      "community": 8,
       "norm_label": "pricecache"
     },
     {
@@ -2280,7 +2397,7 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L25",
       "id": "controllers_price_controller_getseedfordate",
-      "community": 2,
+      "community": 8,
       "norm_label": "getseedfordate()"
     },
     {
@@ -2289,7 +2406,7 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L33",
       "id": "controllers_price_controller_gettodayprices",
-      "community": 2,
+      "community": 8,
       "norm_label": "gettodayprices()"
     },
     {
@@ -2415,7 +2532,7 @@
       "source_file": "nyawit-api/src/routes/price.routes.ts",
       "source_location": "L1",
       "id": "nyawit_api_src_routes_price_routes_ts",
-      "community": 2,
+      "community": 8,
       "norm_label": "price.routes.ts"
     },
     {
@@ -2424,7 +2541,7 @@
       "source_file": "nyawit-api/src/routes/price.routes.ts",
       "source_location": "L5",
       "id": "routes_price_routes_router",
-      "community": 2,
+      "community": 8,
       "norm_label": "router"
     },
     {
@@ -2541,7 +2658,7 @@
       "source_file": "test/widget_test.dart",
       "source_location": null,
       "id": "test_widget_test_dart",
-      "community": 11,
+      "community": 0,
       "norm_label": "widget_test.dart"
     },
     {
@@ -2550,7 +2667,7 @@
       "source_file": "test/widget_test.dart",
       "source_location": null,
       "id": "d_usaha_nyawit_test_widget_test_dart_main",
-      "community": 11,
+      "community": 0,
       "norm_label": "main"
     },
     {
@@ -2559,7 +2676,7 @@
       "source_file": "test/widget_test.dart",
       "source_location": null,
       "id": "package_flutter_test_flutter_test_dart",
-      "community": 11,
+      "community": 0,
       "norm_label": "package:flutter_test/flutter_test.dart"
     },
     {
@@ -2568,7 +2685,7 @@
       "source_file": "test/widget_test.dart",
       "source_location": null,
       "id": "package_nyawit_main_dart",
-      "community": 11,
+      "community": 0,
       "norm_label": "package:nyawit/main.dart"
     },
     {
@@ -3788,6 +3905,16 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "package_flutter_material_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "lib/pages/ai/image_detection_page.dart",
       "source_location": null,
       "weight": 1.0,
@@ -4448,6 +4575,16 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "services_price_service_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "lib/pages/profile_page.dart",
       "source_location": null,
       "weight": 1.0,
@@ -4903,6 +5040,126 @@
       "weight": 1.0,
       "source": "lib_pages_ai_ai_page_dart",
       "target": "live_detection_page_dart"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/ai_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_ai_page_dart",
+      "target": "calculator_page_dart"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_calculatorpage"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_calculatorpagestate"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_initstate"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_calculate"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_dispose"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_build"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_scaffold"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_icon"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_sizedbox"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_text"
+    },
+    {
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "lib/pages/ai/calculator_page.dart",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "lib_pages_ai_calculator_page_dart",
+      "target": "d_usaha_nyawit_lib_pages_ai_calculator_page_dart_dropdownmenuitem"
     },
     {
       "relation": "defines",
@@ -6366,9 +6623,9 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_controllers_price_controller_ts",
-      "target": "controllers_price_controller_cacheentry",
-      "confidence_score": 1.0
+      "target": "controllers_price_controller_cacheentry"
     },
     {
       "relation": "contains",
@@ -6376,9 +6633,9 @@
       "source_file": "nyawit-api/src/controllers/price.controller.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nyawit_api_src_controllers_price_controller_ts",
-      "target": "controllers_price_controller_pricecache",
-      "confidence_score": 1.0
+      "target": "controllers_price_controller_pricecache"
     },
     {
       "relation": "contains",
@@ -7675,5 +7932,5 @@
       "source_file": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }
   ],
-  "built_at_commit": "624dcc0d72393cbd11ca8abdd8ae8f23de2a2e49"
+  "built_at_commit": "fe77c0749295df723e6dd4e314c311ca2d4edd78"
 }

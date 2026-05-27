@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'image_detection_page.dart';
 import 'live_detection_page.dart';
+import 'calculator_page.dart';
 
 class AiPage extends StatelessWidget {
   const AiPage({super.key});
@@ -39,6 +40,15 @@ class AiPage extends StatelessWidget {
           title: 'Deteksi Live',
           description: 'Analisis langsung secara real-time lewat kamera.',
           onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const LiveDetectionPage())),
+          colorScheme: colorScheme,
+        ),
+        const SizedBox(height: 16),
+        _buildModeCard(
+          context,
+          icon: Icons.calculate_rounded,
+          title: 'Kalkulator Sawit',
+          description: 'Hitung estimasi harga panen kelapa sawit Anda.',
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CalculatorPage())),
           colorScheme: colorScheme,
         ),
       ],

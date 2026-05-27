@@ -16,7 +16,7 @@
     "hash": "6278b2af9442fa10167723f36ef8a49a"
   },
   "D:\\usaha\\nyawit\\android\\app\\src\\main\\java\\io\\flutter\\plugins\\GeneratedPluginRegistrant.java": {
-    "mtime": 1779022225.631549,
+    "mtime": 1779891162.4320672,
     "hash": "fc6177654414cc0e284565ddbf0055b7"
   },
   "D:\\usaha\\nyawit\\android\\app\\src\\main\\kotlin\\com\\example\\nyawit\\MainActivity.kt": {
@@ -32,11 +32,11 @@
     "hash": "e277c49e98c9f80e9e71c0524a5cb60f"
   },
   "D:\\usaha\\nyawit\\ios\\Runner\\GeneratedPluginRegistrant.h": {
-    "mtime": 1779022225.6563146,
+    "mtime": 1779891162.6091123,
     "hash": "decb9041b5e91a07e66f4664e5dac408"
   },
   "D:\\usaha\\nyawit\\ios\\Runner\\GeneratedPluginRegistrant.m": {
-    "mtime": 1779022225.6578326,
+    "mtime": 1779891162.64176,
     "hash": "a7d15262b661bdad59a37d642c479e56"
   },
   "D:\\usaha\\nyawit\\ios\\Runner\\Runner-Bridging-Header.h": {
@@ -48,8 +48,8 @@
     "hash": "24e5d095048eb86c30423f4e04b6e57b"
   },
   "D:\\usaha\\nyawit\\lib\\main.dart": {
-    "mtime": 1778754148.9264405,
-    "hash": "c964921b0edc0c4f37d6dbe0bc65c2ec"
+    "mtime": 1779890943.7878354,
+    "hash": "f42df448ac0ed879c50b7ac39fd025b3"
   },
   "D:\\usaha\\nyawit\\lib\\models\\detection.dart": {
     "mtime": 1778753361.6977491,
@@ -72,16 +72,20 @@
     "hash": "51bf4fdc63c2db531155f0b9b89f6e27"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\ai_page.dart": {
-    "mtime": 1778753772.4895413,
-    "hash": "f2076b10aece9fde998eedeecc07a81d"
+    "mtime": 1779891787.6550193,
+    "hash": "c1331472fbbaaffa9b3dd70536757dcb"
+  },
+  "D:\\usaha\\nyawit\\lib\\pages\\ai\\calculator_page.dart": {
+    "mtime": 1779891757.0203123,
+    "hash": "6c4ad2a4656bef223950acd79bd6c58b"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\image_detection_page.dart": {
     "mtime": 1779027588.9881153,
     "hash": "eafa0e3a91710e70af2048197c73a07e"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\ai\\live_detection_page.dart": {
-    "mtime": 1778685303.3606155,
-    "hash": "fa6e037cf51aaf4762deaf57684ad84b"
+    "mtime": 1779038747.397188,
+    "hash": "32bde1c9f2f025667616d89c655f165d"
   },
   "D:\\usaha\\nyawit\\lib\\pages\\auth\\login_page.dart": {
     "mtime": 1778753754.5330925,
@@ -104,8 +108,8 @@
     "hash": "2b3a4ff514a7ab23bde493e469430f00"
   },
   "D:\\usaha\\nyawit\\lib\\services\\palm_detector.dart": {
-    "mtime": 1778685658.951636,
-    "hash": "ea8cf3e831ba4dc923bceeffc31db46d"
+    "mtime": 1779039158.009054,
+    "hash": "4738d5ede4069d622a9aa3f8dda9cd8a"
   },
   "D:\\usaha\\nyawit\\lib\\services\\price_service.dart": {
     "mtime": 1779026756.9369519,
@@ -116,11 +120,11 @@
     "hash": "ffe152d113fc156e0e7895ede157541e"
   },
   "D:\\usaha\\nyawit\\linux\\flutter\\generated_plugin_registrant.cc": {
-    "mtime": 1779022225.6436882,
+    "mtime": 1779891162.4975715,
     "hash": "399ad1d69aa4ba27ae90eb088bbc155c"
   },
   "D:\\usaha\\nyawit\\linux\\flutter\\generated_plugin_registrant.h": {
-    "mtime": 1779022225.6406443,
+    "mtime": 1779891162.4769666,
     "hash": "d295462c9da9f7fef22dc86c34492318"
   },
   "D:\\usaha\\nyawit\\linux\\runner\\main.cc": {
@@ -136,7 +140,7 @@
     "hash": "f6b37d58752c8671078b6f660e33e8c1"
   },
   "D:\\usaha\\nyawit\\macos\\Flutter\\GeneratedPluginRegistrant.swift": {
-    "mtime": 1779022225.6604626,
+    "mtime": 1779891162.6667526,
     "hash": "88e465c1e9d40b8be2eb57bd7ec595e3"
   },
   "D:\\usaha\\nyawit\\macos\\Runner\\AppDelegate.swift": {
@@ -224,11 +228,11 @@
     "hash": "0b9e136d8c17f94f1a9ab2d9247a3b9a"
   },
   "D:\\usaha\\nyawit\\windows\\flutter\\generated_plugin_registrant.cc": {
-    "mtime": 1779022225.6503797,
+    "mtime": 1779891162.5663657,
     "hash": "2babb9c9335a66f5f7b42bbe96eeead8"
   },
   "D:\\usaha\\nyawit\\windows\\flutter\\generated_plugin_registrant.h": {
-    "mtime": 1779022225.6467516,
+    "mtime": 1779891162.5448978,
     "hash": "0ea33875f9f8e118f9c2ded03e2e2835"
   },
   "D:\\usaha\\nyawit\\windows\\runner\\flutter_window.cpp": {
@@ -266,6 +270,10 @@
   "D:\\usaha\\nyawit\\analysis_options.yaml": {
     "mtime": 1778681260.9675357,
     "hash": "9e65f4b9beebb674c0dc252f70a5c177"
+  },
+  "D:\\usaha\\nyawit\\devtools_options.yaml": {
+    "mtime": 1779890751.1010609,
+    "hash": "d1ff5187b1b67653e7357395895e8449"
   },
   "D:\\usaha\\nyawit\\pubspec.yaml": {
     "mtime": 1778688059.7098835,
@@ -431,9 +439,21 @@
     "mtime": 1753798225.1240213,
     "hash": "04e7b6ef05346c70b663ca1d97de3ad5"
   },
+  "D:\\usaha\\nyawit\\nyawit-api\\uploads\\detection_1779027791201_802029.jpg": {
+    "mtime": 1779027791.2066193,
+    "hash": "20ef099b146a33fe0c2afe16c7922137"
+  },
+  "D:\\usaha\\nyawit\\nyawit-api\\uploads\\detection_1779027838781_41435.jpg": {
+    "mtime": 1779027838.7815166,
+    "hash": "bd00cec04b2c4f668a25b041bdc6722f"
+  },
   "D:\\usaha\\nyawit\\nyawit-api\\uploads\\profile_1779022888110_398201.jpg": {
     "mtime": 1779022888.11228,
     "hash": "8c51114c7ae4b40a55f6a3210b723d9d"
+  },
+  "D:\\usaha\\nyawit\\nyawit-api\\uploads\\profile_1779027975097_638904.jpg": {
+    "mtime": 1779027975.0983891,
+    "hash": "b963e844dd05e441d3387e05664aa0ba"
   },
   "D:\\usaha\\nyawit\\web\\favicon.png": {
     "mtime": 1753798129.3091486,
